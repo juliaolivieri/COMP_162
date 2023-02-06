@@ -86,14 +86,25 @@ We can access rows and columns of data frames using square brackets, similar to 
 
 ## Installing packages
 
-1. 
+1. You can install an R package using the `install.packages()` function, for example `install.packages("tidyverse")`. Try running this command to make sure the package is installed.
+2. You can load an R package into your session using the `library()` function, e.g. `library(tidyverse)`. Load the `tidyverse` package into your current session.
+3. You can check which packages are loaded in your current session by going to the "Packages" tab in the bottom right pane of the RStudio console. Click on one of the checked packages to go to its documentation.
 
 ## Changing the working directory
 
-1. 
+1. Now that we are about to start reading and writing data in R, we need to figure out where R thinks we are in our computer's file system. To do this, run the command `getwd()` to get the current working directory.
+  * On a mac this will look something like: `/Users/jolivie1` (except with your username instead of `jolivie1`)
+  * On a PC this will look something like: `C:\Users\jolivie1` (except with your username instead of `jolivie1`)
+2. We will now change the working directory to the desktop. If you would prefer to work in another folder, you can set the working directory to whichever folder you would like to work in.
+  * On a mac this will look something like: `setwd("/Users/jolivie1/Desktop")` (except with your username instead of `jolivie1`)
+  * On a PC this will look something like: `C:\Users\jolivie1\Desktop` (except with your username instead of `jolivie1`)
+3. Now running `getwd()` should show your new working directory.
+ 
 
 ## Reading/writing your own data
 
-1. 
+1. Download the following file to your working directory location (this is the desktop if you followed the instructions from the previous section): 
+2. Read this file into a data frame in R using the following command: `read_csv(“auto.csv”)`
+3. Write this data frame to a .csv file using the following command: `write_csv(small_auto,"small_auto.csv")`.
 
 
