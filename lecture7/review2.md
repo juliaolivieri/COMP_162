@@ -103,8 +103,8 @@ We can access rows and columns of data frames using square brackets, similar to 
 
 ## Reading/writing your own data
 
-1. Download the following file to your working directory location (this is the desktop if you followed the instructions from the previous section): 
-2. Read this file into a data frame in R using the following command: `read_csv(“auto.csv”)`
-3. Write this data frame to a .csv file using the following command: `write_csv(small_auto,"small_auto.csv")`.
+1. Download the following file to your working directory location (this is the desktop if you followed the instructions from the previous section): https://drive.google.com/file/d/1YGKp2pRhVINto56c9lFSLoxKdGD19a4C/view?usp=sharing 
+2. Read this file into a data frame in R using the following command: `tips <- read_csv(“tips.csv”)`
+3. Write this data frame to a .csv file using the following command: `write_csv(tips,"modified_tips.csv")`.
 
 
