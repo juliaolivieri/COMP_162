@@ -4,13 +4,13 @@
 
 ### Creating vectors
 
-1. Use the `c()` function to create a vector containing the numbers 4, 10, and 15. Assign it to `var10`.
+1. Use the `c()` function to create a vector containing the numbers 4, 10, and 15. Assign it to `var10`. An example of how to use this function is `c(3, 2, 1)`.
 2. Use the `c()` function to create a vector containing the words `apple`, `orange`, `grapefruit`, and `lime`. Save this vector as `fruits`.
 3. Try using `c()` to combine vectors `c(4, 10)` and `15`, and save the result as `var11`.  
 4. What happens when you run `var10 == var11`?
 5. Set `var12` equal to a range of your choice (e.g. 2:8).
-6. Use the `length()` function to find the length of each of the vectors you have defined.
-7. Use the `str()` function to check the type of each vector you have defined.
+6. Use the `length()` function to find the length of each of the vectors you have defined, e.g. `length(var10)`.
+7. Use the `str()` function to check the type of each vector you have defined, e.g. `str(var10)`.
 8. Try using `c()` to combine `var10` and `fruits`. What is the type of the resulting vector?
 
 ### Accessing vector values
@@ -25,7 +25,7 @@ Remember, R indexing starts at 1. We use brackets to index into a vector.
 
 ### Mathematical operations on vectors
 
-1. Find the sum of all values of `var12` using the `sum()` function.
+1. Find the sum of all values of `var12` using the `sum()` function, e.g. `sum(var12)`.
 2. Find the sum of the squares of all values of `var12`.
 3. Subtract 1 from every entry of `var10`.
 4. Copy the following vectors into your script (they now have more data than last week):
@@ -37,8 +37,9 @@ date <- c("Jan17", "Jan18", "Jan19", "Jan20", "Jan23", "Jan24", "Jan25", "Jan26"
 5. Find the difference between `tesla_price` and `apple_price`. On which day was the price difference the largest?
 6. Find the average of the `tesla_price` vector using the `sum()` and `length()` functions. Do the same with the `apple_price` vector.
 7. Find the average of each of the price vectors using the `mean()` function.
-8. Find the average of the `tesla_price` vector's first four entries (corresopnding to Jan17 through Jan20), and do the same for `apple_price`.
-9. Find the average difference between `tesla_price`  and `apple_price`.
+8. Find the average difference between `tesla_price`  and `apple_price`.
+9. **(Challenge) Find the average of the `tesla_price` vector's first four entries (corresopnding to Jan17 through Jan20), and do the same for `apple_price`.**
+10. **(Challenge) Use a loop to write a function num.odd(v) that returns how many odd numbers there are in the vector v. Then, write a function num.odd2(v) that does the same thing without using a loop.**
 
 ## Data Frames
 
