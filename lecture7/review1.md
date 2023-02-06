@@ -1,9 +1,11 @@
 # Review of Introduction to R
 
+Note: bolded questions are "challenge" questions
+
 ## Exploring RStudio
 
 1. Create a new R script file, and save it as `lecture7.R`.
-2. Add a comment to the beginning of your script by using `#`. What happens when you try to run this line of code?
+2. Add a comment to the beginning of your script by using `#`. What happens when you try to run this line of code? I recommend including comments throughout this classwork to help you remember what you did.
 3. Evaluate the mathematical expression `(400/20) + 22` in the console. Then add it to your script file, and evaluate it there. Is there a difference? Which is preferrable?
 4. Try writing `-3:6` in your script and evaluating it. What is the output? What do you think the output will be if you instead input `4:93`? Check to see if you were right.
 5. Check the documentation of the `min` function by running `?min` in your script. What does this function do based on the documentation?
@@ -17,7 +19,7 @@
 4. Use `>` to check whether `sqrt(3)` is greater than `log(3)`.
 5. Use `<` to check whether `log(3)` is less than `log10(d)`.
 6. R has the value of pi encoded in this variable: Try executing `pi` in your R script. 
-7. A penny has a diameter of 0.750 mm. A quarter has a diameter of 24.26 mm. Calculate the difference in the areas of a quarter and a penny. Remember, the area of a circle is equal to $\pi (radius)^2$. The radius is equal to the diameter divided by two. 
+7. **(Challenge) A penny has a diameter of 0.750 mm. A quarter has a diameter of 24.26 mm. Calculate the difference in the areas of a quarter and a penny. Remember, the area of a circle is equal to $\pi (radius)^2$. The radius is equal to the diameter divided by two.** 
 
 ## Assigning/printing variables
 
@@ -28,11 +30,11 @@
 5. Assign `var5` to `TRUE`.
 6. Check whether `var4` is equal to `var5` using `==`.
 7. Print each variable.
-8. Redo question 7 from the section above, but this time assign a variable for the diameter of a quarter, a variable for the diameter of a penny, a variable for the area of a quarter, a variable for the area of a penny, and a variable for the difference in area of the two.
+8. **(Challenge) Redo question 7 from the section above, but this time assign a variable for the diameter of a quarter, a variable for the diameter of a penny, a variable for the area of a quarter, a variable for the area of a penny, and a variable for the difference in area of the two.**
 
 ## Variable types
 
-1. Check the types of five of the variables that you have defined in your script so far using the `str()`  function.
+1. Check the types of five of the variables that you have defined in your script so far using the `str()`  function, e.g. `str(var1)`.
 2. Assign a variable `var6` to 5, and a variable `var7` to 5L.
 3. Check the types of these two variables.
 4. Check whether these two variables are equal.
@@ -63,7 +65,7 @@ if (day == "Saturday" ) {
   * 18-29: You are old enough to vote!
   * 30-34: You re old enough to become a senator!
   * 35 and older: You are old enough to become president!  
-5. Define a variable `var9`. If `var9` is divisible by 2 and 7, print `cracklepop`. If it is only divisible by 2, print `crackle`. If it is only divisble by 7, print `pop`.
+5. **(Challenge) Define a variable `var9`. If `var9` is divisible by 2 and 7, print `cracklepop`. If it is only divisible by 2, print `crackle`. If it is only divisble by 7, print `pop`.**
 
 ## For loops
 
@@ -79,6 +81,6 @@ for (x in 1:10) {
 2. Change 1:10 to a different range in the loop. What do you expect to be printed this time? Does the output meet your expectation?
 3. Write a for loop to print $x^2$ for $x = 4, 5, 6, \ldots, 49, 50$.
 4. Use a for loop to calculate the sum of the numbers from 1 to 100.
-5. Using your answer to question 5 of the section above, write code to print the numbers from 1 to 100. If the number is only divisible by 2, print `crackle`. If it is only divisble by 7, print `pop`.
-6. Use a nested for loop to print `i - j` for all $i = 1, 2, ..., 7$ and $j = 3, ..., 10$.
+5. **(Challenge) Using your answer to question 5 of the section above, write code to print the numbers from 1 to 100. If the number is only divisible by 2, print `crackle`. If it is only divisble by 7, print `pop`.**
+6. **(Challenge) Use a nested for loop to print `i - j` for all $i = 1, 2, ..., 7$ and $j = 3, ..., 10$.**
 
