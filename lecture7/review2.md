@@ -1,11 +1,13 @@
 # Review of Data Structures
 
+Note: "classwork" questions are bolded. You are welcome to include more answers in your classwork submission.
+
 ## Vectors
 
 ### Creating vectors
 
 1. Use the `c()` function to create a vector containing the numbers 4, 10, and 15. Assign it to `var10`. An example of how to use this function is `c(3, 2, 1)`.
-2. Use the `c()` function to create a vector containing the words `apple`, `orange`, `grapefruit`, and `lime`. Save this vector as `fruits`.
+2. **(CW) Use the `c()` function to create a vector containing the words `apple`, `orange`, `grapefruit`, and `lime`. Save this vector as `fruits`.**
 3. Try using `c()` to combine vectors `c(4, 10)` and `15`, and save the result as `var11`.  
 4. What happens when you run `var10 == var11`?
 5. Set `var12` equal to a range of your choice (e.g. 2:8).
@@ -20,7 +22,7 @@ Remember, R indexing starts at 1. We use brackets to index into a vector.
 2.  What do you expect to be the output of `fruits[3:4]`? Check to see if you're right.
 3.  What do you expect to be the output of `var12[c(1, 3, 6)]`? Check to see if you're right.
 4.  What do you expect to be the output of `var11[1:length(var11)]`? Check to see if you're right.
-5.  Try indexing into the vector `fruits` to get the value `lime`.
+5.  **(CW) Try indexing into the vector `fruits` to get the value `lime`.
 6.  Subset `var12` to the third entry through the last entry.
 
 ### Mathematical operations on vectors
@@ -34,7 +36,7 @@ tesla_price <- c(131.49, 128.78, 127.17, 133.42, 143.75, 143.89, 144.43, 160.27,
 apple_price <- c(135.94, 135.21, 135.27, 137.87, 141.11, 142.53, 141.86, 143.96, 145.93, 143, 144.29, 145.43, 150.82, 154.5)
 date <- c("Jan17", "Jan18", "Jan19", "Jan20", "Jan23", "Jan24", "Jan25", "Jan26", "Jan27", "Jan30", "Jan31", "Feb1", "Feb2", "Feb3")
 ```
-5. Find the difference between `tesla_price` and `apple_price`. On which day was the price difference the largest?
+5. **(CW) Find the difference between `tesla_price` and `apple_price`. On which day was the price difference the largest?**
 6. Find the average of the `tesla_price` vector using the `sum()` and `length()` functions. Do the same with the `apple_price` vector.
 7. Find the average of each of the price vectors using the `mean()` function.
 8. Find the average difference between `tesla_price`  and `apple_price`.
@@ -54,7 +56,7 @@ stocks <- data.frame(
   apple=apple_price
 )
 ```
-2. Try defining a data frame called `animals` using the following vectors as columns:
+2. **(CW) Try defining a data frame called `animals` using the following vectors as columns:**
 
 ```
 species <- c("dog", "cat", "penguin")
@@ -70,7 +72,7 @@ feathers <- c(FALSE, FALSE, TRUE)
 
 1. To look at the data sets available for analysis in R, use the command `data()`. 
 2. These datasets vary in size and quality. You can load one in using the `data()` function, e.g. `data(iris)`. Load in several data frames until you find one with at least 4 columns and at least 20 rows (you can use the `str()` function to help). 
-3. Try using the `head()` command on the data frame you loaded in the previous question, e.g. `head(iris)`. What does this function do?
+3. **(CW) Try using the `head()` command on the data frame you loaded in the previous question, e.g. `head(iris)`. What does this function do?**
 4. Try using the `summary()` command on this data frame. What does this tell you that the `str()` command didn't tell you?
 5. Each column of a data frame is a vector. We can access each one of these vectors using the `$` symbol. For example, if we wanted to access the `Species` column of the `iris` data frame, we would use `iris$Species`. Try accessing the individual columns of your data frame and running `summary()` on them.
 6. Try adding two numeric columns together and saving their value as a new column, e.g. `iris$newcol <- iris$Sepal.Length + iris$Sepal.Width`. 
@@ -82,7 +84,7 @@ We can access rows and columns of data frames using square brackets, similar to 
 1. What do you think will be the result of `species[1,1]`? Run the code to check.
 2. What do you think will be the result of `species[2,]`? Run the code to check.
 3. What do you think will be the result of `species[,3]`? Run the code to check.
-4. Write a line of code to subset the `species` dataframe to just the first and second columns.
+4. **(CW) Write a line of code to subset the `species` dataframe to just the first and second columns.**
 5. Write a line of code to subset the `species` dataframe to just the first and third rows.
 6. Write a line of code to subset the `species` dataframe to the second and third rows, and the first and second columns.
 
