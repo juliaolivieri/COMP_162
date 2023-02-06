@@ -67,5 +67,18 @@ if (day == "Saturday" ) {
 
 ## For loops
 
+Here is an example to show for loop syntax in R:
 
+```
+for (x in 1:10) {
+  print(x)
+}
+```
+
+1. Copy and paste this code into your script and execute it. What gets printed? Do you understand why these numbers are printed?
+2. Change 1:10 to a different range in the loop. What do you expect to be printed this time? Does the output meet your expectation?
+3. Write a for loop to print $x^2$ for $x = 4, 5, 6, \ldots, 49, 50$.
+4. Use a for loop to calculate the sum of the numbers from 1 to 100.
+5. Using your answer to question 5 of the section above, write code to print the numbers from 1 to 100. If the number is only divisible by 2, print `crackle`. If it is only divisble by 7, print `pop`.
+6. Use a nested for loop to print `i - j` for all $i = 1, 2, ..., 7$ and $j = 3, ..., 10$.
 
