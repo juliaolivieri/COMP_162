@@ -21,9 +21,51 @@
 
 ## Assigning/printing variables
 
+1. Assign a variable to `var1` with the result of 5 different mathematical operations/functions, e.g. `floor((27 - 3) %% 5) + ceiling(-5.9)^2`.
+2. Assign a variable `var2` to a different result of mathematical operations/functions.
+3. Assign a third variable to the result of `var1 == var2`.
+4. Assign `var4` to `T`.
+5. Assign `var5` to `TRUE`.
+6. Check whether `var4` is equal to `var5` using `==`.
+7. Print each variable.
+8. Redo question 7 from the section above, but this time assign a variable for the diameter of a quarter, a variable for the diameter of a penny, a variable for the area of a quarter, a variable for the area of a penny, and a variable for the difference in area of the two.
+
 ## Variable types
+
+1. Check the types of five of the variables that you have defined in your script so far using the `str()`  function.
+2. Assign a variable `var6` to 5, and a variable `var7` to 5L.
+3. Check the types of these two variables.
+4. Check whether these two variables are equal.
+5. Assign `var8` to `"5"`. What type is this variable?
+6. Is `var8` equal to `var6`?
 
 ## "If/else" statements
 
+Here is an example to show if/else syntax in R:
+
+```
+day <- "Monday"
+if (day == "Saturday" ) {
+  print("Weekend starts!")
+} else if (day == "Sunday") {
+  print("Weekend ends")
+} else {
+  print("Weekday")
+}
+
+```
+
+1. Copy and paste this code into your script and execute it. What gets printed? Do you understand why this message is printed?
+2. Change the value of the `day` variable to cause a different message to be printed.
+3. Define a variable called `var9`. Write code to print a different message depending on whether `var9` is positive, negative, or equal to 0.
+4. Define a variable called `age`. Output a different message for each age range:
+  * 0-17: You are a minor.
+  * 18-29: You are old enough to vote!
+  * 30-34: You re old enough to become a senator!
+  * 35 and older: You are old enough to become president!  
+5. Define a variable `var9`. If `var9` is divisible by 2 and 7, print `cracklepop`. If it is only divisible by 2, print `crackle`. If it is only divisble by 7, print `pop`.
+
 ## For loops
+
+
 
