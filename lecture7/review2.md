@@ -72,6 +72,7 @@ feathers <- c(FALSE, FALSE, TRUE)
 3. Try using the `head()` command on the data frame you loaded in the previous question, e.g. `head(iris)`. What does this function do?
 4. Try using the `summary()` command on this data frame. What does this tell you that the `str()` command didn't tell you?
 5. Each column of a data frame is a vector. We can access each one of these vectors using the `$` symbol. For example, if we wanted to access the `Species` column of the `iris` data frame, we would use `iris$Species`. Try accessing the individual columns of your data frame and running `summary()` on them.
+6. Try adding two numeric columns together and saving their value as a new column, e.g. `iris$newcol <- iris$Sepal.Length + iris$Sepal.Width`. 
 
 ### Subsetting data frames
 
@@ -105,6 +106,11 @@ We can access rows and columns of data frames using square brackets, similar to 
 
 1. Download the following file to your working directory location (this is the desktop if you followed the instructions from the previous section): https://drive.google.com/file/d/1YGKp2pRhVINto56c9lFSLoxKdGD19a4C/view?usp=sharing 
 2. Read this file into a data frame in R using the following command: `tips <- read_csv(“tips.csv”)`
-3. Write this data frame to a .csv file using the following command: `write_csv(tips,"modified_tips.csv")`.
+3. View this data frame.
+4. Define a new column that is equal to the total amount paid by summing the `total_bill` and `tip` columns. 
+5. Define a new column that is equal to the percent each party tipped (the tip divided by the total bill times 100).
+6. Define a new column that is equal to the price of the meal per person (`total_bill` plus `tip` divided by `size`).
+7. Write this data frame to a .csv file using the following command: `write_csv(tips,"modified_tips.csv")`.
+8. Can you find where this file is saved on your computer?
 
 
