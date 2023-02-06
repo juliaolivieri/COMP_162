@@ -22,7 +22,7 @@ Remember, R indexing starts at 1. We use brackets to index into a vector.
 2.  What do you expect to be the output of `fruits[3:4]`? Check to see if you're right.
 3.  What do you expect to be the output of `var12[c(1, 3, 6)]`? Check to see if you're right.
 4.  What do you expect to be the output of `var11[1:length(var11)]`? Check to see if you're right.
-5.  **(CW) Try indexing into the vector `fruits` to get the value `lime`.
+5.  **(CW) Try indexing into the vector `fruits` to get the value `lime`.**
 6.  Subset `var12` to the third entry through the last entry.
 
 ### Mathematical operations on vectors
