@@ -17,7 +17,7 @@ Note: "classwork" questions are bolded. You are welcome to include more answers 
 1. **(CW) One of the most basic uses of R is as a calculator. Write down a line of code in your script to calculate the number of seconds in a year. Include a comment above it to keep track of what you were trying to calculate.**
 3. Use the `%%` operator to check whether the following number is even: `(3.2^2) %/% 2` 
 4. Use `>` to check whether `sqrt(3)` is greater than `log(3)`.
-5. Use `<` to check whether `log(3)` is less than `log10(d)`.
+5. Use `<` to check whether `log(3)` is less than `log10(3)`.
 6. R has the value of pi encoded in this variable: Try executing `pi` in your R script. 
 7. (Challenge) A penny has a diameter of 0.750 mm. A quarter has a diameter of 24.26 mm. Calculate the difference in the areas of a quarter and a penny. Remember, the area of a circle is equal to $\pi (radius)^2$. The radius is equal to the diameter divided by two. 
 
