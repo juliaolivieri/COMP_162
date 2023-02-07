@@ -81,12 +81,12 @@ feathers <- c(FALSE, FALSE, TRUE)
 
 We can access rows and columns of data frames using square brackets, similar to vectors. The format is `df[rows, columns]` where `df` is our data frame, `rows` is a vector representing the rows we want to access, and `columns` is a vector representing the columns we want to access. If we leave `rows` blank, e.g. `df[,columns]`, all columns will be selected. Similarly, if we leave `columns` blank like `df[rows,]` then all columns will be selected.
 
-1. What do you think will be the result of `species[1,1]`? Run the code to check.
-2. What do you think will be the result of `species[2,]`? Run the code to check.
-3. What do you think will be the result of `species[,3]`? Run the code to check.
-4. **(CW) Write a line of code to subset the `species` dataframe to just the first and second columns.**
-5. Write a line of code to subset the `species` dataframe to just the first and third rows.
-6. Write a line of code to subset the `species` dataframe to the second and third rows, and the first and second columns.
+1. What do you think will be the result of `animals[1,1]`? Run the code to check.
+2. What do you think will be the result of `animals[2,]`? Run the code to check.
+3. What do you think will be the result of `animals[,3]`? Run the code to check.
+4. **(CW) Write a line of code to subset the `animals` dataframe to just the first and second columns.**
+5. Write a line of code to subset the `animals` dataframe to just the first and third rows.
+6. Write a line of code to subset the `animals` dataframe to the second and third rows, and the first and second columns.
 
 ## Installing packages
 
