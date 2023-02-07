@@ -107,13 +107,14 @@ We can access rows and columns of data frames using square brackets, similar to 
 
 ## Reading/writing your own data
 
-1. Download the following file to your working directory location (this is the desktop if you followed the instructions from the previous section): https://drive.google.com/file/d/1YGKp2pRhVINto56c9lFSLoxKdGD19a4C/view?usp=sharing 
-2. Read this file into a data frame in R using the following command: `tips <- read_csv(“tips.csv”)`
-3. View this data frame.
-4. Define a new column that is equal to the total amount paid by summing the `total_bill` and `tip` columns. 
-5. Define a new column that is equal to the percent each party tipped (the tip divided by the total bill times 100).
-6. Define a new column that is equal to the price of the meal per person (`total_bill` plus `tip` divided by `size`).
-7. Write this data frame to a .csv file using the following command: `write_csv(tips,"modified_tips.csv")`.
-8. Can you find where this file is saved on your computer?
+1. Load the tidyverse package using `library(tidyverse)`.
+2. Download the following file to your working directory location (this is the desktop if you followed the instructions from the previous section): https://drive.google.com/file/d/1YGKp2pRhVINto56c9lFSLoxKdGD19a4C/view?usp=sharing 
+3. Read this file into a data frame in R using the following command: `tips <- read_csv(“tips.csv”)`
+4. View this data frame.
+5. Define a new column that is equal to the total amount paid by summing the `total_bill` and `tip` columns. 
+6. Define a new column that is equal to the percent each party tipped (the tip divided by the total bill times 100).
+7. Define a new column that is equal to the price of the meal per person (`total_bill` plus `tip` divided by `size`).
+8. Write this data frame to a .csv file using the following command: `write_csv(tips,"modified_tips.csv")`.
+9. Can you find where this file is saved on your computer?
 
 
