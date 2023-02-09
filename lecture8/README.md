@@ -116,3 +116,4 @@ starwars %>%
 1. **(CW) Try re-writing the answer to the previous classwork question using the pipe operator**
 2. Try filtering the data frame to columns for which `species` is equal to `Human` and sorting by `age` using `%>%`.
 3. (Challenge) Try stringing the `arrange()`, `select()`, `mutate()`, `filter()`, `group_by()`, and `summarize()` functions all together using `%>%`.
+4. (Challenge) Try re-writing all of the previous classwork questions using `%>%`.
