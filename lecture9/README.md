@@ -18,6 +18,21 @@ ggplot(mpg,
 # Saves the most recent plots as "my_first_plot.png" in the current working directory
 ggsave(“my_first_plot.png”)
 ```
+Columns of the `mpg` data:
+
+| **Variable** | **Description** |
+----|---
+| manufacturer | The company who is responsible for making the vehicle |
+| model | The model of the car |
+| displ | The displacement or engine size of the engine in the standard model of the vehicle (in liters) |
+| year | The model year of the vehicle  |
+| cyl | The number of cylinders in the vehicle’s engine |
+| trans | The type of transmission inside of the vehicle (manual or automatic) |
+| drv | “drv” stands for “drivetrain” which is either forward, rear, or 4-wheel drive |
+| cty | The number of city miles per gallon that the car is able to achieve|
+| hwy | The number of highway miles per gallon that the car is able to achieve|
+| fl | The vehicle’s fuel type (e = ethanol, d = diesel, r = regular, p = premium, c = CNG) |
+| class | The “type” of the vehicle (ex: compact, subcompact, midsize, etc.) |
 
 1. **(Classwork) Open a new R script file. This is what you will turn in for today's classwork.**
 2. **(Classwork) Load the "tidyverse" library.**
@@ -83,6 +98,9 @@ ggplot(mpg,
 1. **(Classwork) Plot `displ` vs `hwy` and facet by `cyl`.**
 2. Try coloring the points by `class` in the previous plot.
 3. Try faceting by each variable other than `displ` and `hwy`. Which seem the most useful? Which seem the least useful?
+4. What happens when you color by the same variable that you're faceting by?
+5. What happens when you color by a different variable?
+6. (Challenge) Try faceting in the `diamond` dataset as well. When do you think faceting is preferable to using aesthetics to distinguish groups?
 
 ## Changing `geom()`
 Example commands from lecture:
