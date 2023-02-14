@@ -1,5 +1,7 @@
 # Lecture 9 Classwork
 
+This book is a great resource for ggplot2: https://ggplot2-book.org/ 
+
 ## First plotting exercise
 Example commands from lecture:
 ```
@@ -65,3 +67,26 @@ ggplot(mpg,
 1. **(Classwork) Plot `displ` vs `hwy` and facet by `cyl`.**
 2. Try coloring the points by `class` in the previous plot.
 3. Try faceting by each variable other than `displ` and `hwy`. Which seem the most useful? Which seem the least useful?
+
+## Changing `geom()`
+Example commands from lecture:
+```
+# Create a histogram of the hwy variable
+ggplot(mpg,
+       aes(hwy)) +
+  geom_histogram()
+  
+# Create a histogram of the hwy variable with a bin width of 5
+ggplot(mpg,
+       aes(hwy)) +
+  geom_histogram(binwidth=5)
+  
+# Create a bar plot of the fl variable
+ggplot(mpg,
+       aes(fl)) +
+  geom_bar()
+```
+1. **(Classwork) Create a histogram of the `cty` variable.** 
+2. Create a bar plot of the `class` variable.
+3. Explore the distribution of the `carat` variable in the diamonds dataset using a histogram (`diamonds` is pre-loaded). What binwidth reveals the most interesting patterns?
+4. (Challenge) Scroll through this list of the "top 50 ggplot2 visualizations": http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html. Copy and pastethe code for one that is of interest to you. Can you make a version of that plot using the `mpg` data? 
