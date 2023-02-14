@@ -123,5 +123,6 @@ ggplot(mpg,
 1. **(Classwork) Create a histogram of the `cty` variable.** 
 2. Create a bar plot of the `class` variable.
 3. Explore the distribution of the `carat` variable in the diamonds dataset using a histogram (`diamonds` is pre-loaded). What binwidth reveals the most interesting patterns?
-4. (Challenge) What happens when you use color in these plots?
-5. (Challenge) Scroll through this list of the "top 50 ggplot2 visualizations": http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html. Copy and pastethe code for one that is of interest to you. Can you make a version of that plot using the `mpg` data? 
+4. Try making either a histogram or bar plot for each variable in mpg, depending on whether it's quantitative or categorical.
+5. (Challenge) What happens when you use color in these plots?
+6. (Challenge) Scroll through this list of the "top 50 ggplot2 visualizations": http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html. Copy and pastethe code for one that is of interest to you. Can you make a version of that plot using the `mpg` data? 
