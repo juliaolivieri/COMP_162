@@ -55,6 +55,22 @@ ggplot(mpg,
 2. Try making three different plots of `cty` vs `hwy`, the first with color by `drv`, the second with `shape` by `fl`, and the third with size by `displ`.
 3. Plot `displ` vs `cty`. Try mapping color to `hwy`. What happens?
 4. Try mapping a quantitative variable to shape. What happens?
+5. (Challenge) You should have access to the `diamonds` dataset (it is pre-loaded with the `ggplot2` package). Try plotting different variables against each other. Which aesthetic choices let you tell the best story? The variables are as follows:
+
+
+| **Variable** | **Description** |
+--------------- | -----------
+| price | price in US dollars |
+| carat | weight of the diamond |
+| cut | quality of the cut |
+| color | diamond color |
+| clarity | measurement of how clear the diamond is |
+| x | length in mm |
+| y | width in mm |
+| z | depth in mm |
+| depth | total depth percentage |
+| table | width of top of diamond relative to widest point |
+
 
 ## Faceting
 Example commands from lecture:
