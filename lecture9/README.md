@@ -30,3 +30,26 @@ ggsave(“my_first_plot.png”)
 * `ggplot(economics, aes(date, unemploy)) + geom_line()`
 * `ggplot(mpg, aes(cty)) + geom_histogram()`
 
+## Changing plot aesthetics
+Example commands from lecture:
+```
+# plots displ vs hwy, with point color determined by class
+ggplot(mpg,
+       aes(displ, hwy, color = class)) + 
+  geom_point()
+
+# plots displ vs hwy, with point color determined by class,
+# point shape determined by drv, and point size determined by cyl
+ggplot(mpg,
+       aes(displ, 
+           hwy, 
+           color = class, 
+           shape = drv, 
+           size = cyl)) + 
+  geom_point()
+```
+
+1. **(Classwork) Plot `cty` vs `hwy` and color by `drv`, determine shape by `fl`, and size by `displ`.**
+2. Try making three different plots of `cty` vs `hwy`, the first with color by `drv`, the second with `shape` by `fl`, and the third with size by `displ`.
+3. Plot `displ` vs `cty`. Try mapping color to `hwy`. What happens?
+4. Try mapping a quantitative variable to shape. What happens?
