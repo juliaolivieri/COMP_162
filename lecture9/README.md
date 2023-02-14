@@ -53,3 +53,15 @@ ggplot(mpg,
 2. Try making three different plots of `cty` vs `hwy`, the first with color by `drv`, the second with `shape` by `fl`, and the third with size by `displ`.
 3. Plot `displ` vs `cty`. Try mapping color to `hwy`. What happens?
 4. Try mapping a quantitative variable to shape. What happens?
+
+## Faceting
+Example commands from lecture:
+```
+ggplot(mpg,
+       aes(displ, hwy, color = class)) + 
+  geom_point() +
+  facet_wrap(~class)
+```
+1. **(Classwork) Plot `displ` vs `hwy` and facet by `cyl`.**
+2. Try coloring the points by `class` in the previous plot.
+3. Try faceting by each variable other than `displ` and `hwy`. Which seem the most useful? Which seem the least useful?
