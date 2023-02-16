@@ -2,6 +2,21 @@
 
 ## Vignette 1 
 
+New techniques:
+* Pipe a data frame into `ggplot` using `%>%`
+* Add a new column with `mutate()` and pipe the result into a plot
+* Add title, x, and y labels with `labs()`
+
+Example command with new techniques:
+```
+bike_sharing %>%
+  mutate(frac_casual = casual/count) %>%
+  ggplot(aes(temperature_F,count,color=season,shape=weather,size=frac_casual)) +
+  geom_point() +
+  labs(title = "Effect of weather conditions on number of riders", x = "temperature (F)", y = "number of riders")
+```
+
+All code from lecture:
 ```
 bike_sharing %>%
   ggplot(aes(humidity,count)) +
@@ -41,6 +56,19 @@ ggsave("weather_on_numriders.png")
 ```
 
 ## Vignette 2
+New techniques:
+* Use `dplyr` to filter a data frame and pipe into `ggplot()`
+
+Example command with new techniques:
+```
+bike_sharing %>%
+  mutate(frac_casual = casual/count) %>%
+  filter(year == 2011) %>%
+  ggplot(aes(date, frac_casual)) + 
+  geom_point(color = "dodgerblue") 
+```
+
+All code from lecture:
 ```
 bike_sharing %>%
   mutate(frac_casual = casual/count) %>%
@@ -84,6 +112,17 @@ ggsave("frac_casual_by_day.png")
 ```
 
 ## Vignette 3
+New techniques:
+* Create a grouped bar plot by setting `fill` equal to a variable and `position` equal to `dodge`.
+
+Example command with new techniques:
+```
+bike_sharing %>%
+  ggplot(aes(weather, fill=season)) +
+  geom_bar(position="dodge")
+```
+
+All code from lecture:
 ```
 bike_sharing %>%
   ggplot(aes(weather)) +
@@ -110,6 +149,25 @@ ggsave("weather_by_season.png")
 ```
 
 ## Vignette 4
+New techniques:
+* Learn how to filter by multiple values at once using the "or" operator `|`.
+* Learn `geom_freqpoly()` for creating a "frequency polygon" plot (whereas a histogram shows frequency with bars, this shows frequency with lines)
+* Learn `geom_density()` for creating a smoothed density estimate (a smoothed version of a frequency polygon)
+
+Example commands with new techniques:
+```
+bike_sharing %>%
+  filter(season == "summer" | season == "winter") %>%
+  ggplot(aes(temperature_F,color=season)) +
+  geom_freqpoly() 
+  
+bike_sharing %>%
+  filter(season == "summer" | season == "winter") %>%
+  ggplot(aes(temperature_F,color=season)) +
+  geom_density()
+```
+
+All code from lecture:
 ```
 bike_sharing %>%
   ggplot(aes(temperature_F)) +
@@ -162,6 +220,23 @@ ggsave("temp_by_season.png")
 ```
 
 ## Vignette 5
+New techniques:
+* Learn how to create box plots with `geom_boxplot()`
+* Learn how to add "jitter" to points with `geom_jitter()`
+* Learn how to create grouped box plots by setting `fill` equal to a categorical variable
+
+Example command with new techniques:
+```
+bike_sharing %>%
+  ggplot(aes(season,humidity)) +
+  geom_jitter(color="dodgerblue")
+  
+bike_sharing %>%
+  ggplot(aes(season,humidity,fill=weather)) +
+  geom_boxplot()
+```
+
+All code from lecture:
 ```
 bike_sharing %>%
   ggplot(aes(season,humidity)) +
@@ -193,6 +268,21 @@ ggsave("humidty_weather.png")
 ```
 
 ## Vignette 6
+New techniques:
+* Use `geom_line()` to connect points 
+* Use `group` to add multiple lines to a `geom_line()` plot
+* Use `geom_smooth()` to add a trend line to data
+
+Example command with new techniques:
+```
+bike_sharing %>%
+  ggplot(
+    aes(date_noyear,count, color = year, group = year)) + 
+  geom_line() +
+  geom_smooth()
+```
+
+All code from lecture:
 ```
 bike_sharing %>%
   ggplot(
@@ -236,6 +326,25 @@ ggsave("riders_by_date.png")
 ```
 
 ## Vignette 7
+New techniques:
+* Use `group_by()` and `summarize()` to pipe data into `ggplot()`
+* Create a bar plot based on two variables by setting `stat = "identity"`
+* Using `reorder` to change the order of bars in a bar plot
+* Using `drop_na()` to filter NA values from a data frame
+* Use `filter()` to only include bars with a certain count threshold
+
+Example command with new techniques:
+```
+starwars %>%
+  group_by(homeworld) %>%
+  summarize(count = n()) %>%
+  filter(count > 1) %>%
+  drop_na() %>%
+  ggplot(aes(reorder(homeworld,count),count)) +
+  geom_bar(fill = "dodgerblue",stat="identity")
+```
+
+All code from lecture:
 ```
 starwars %>%
   ggplot(aes(homeworld)) +
