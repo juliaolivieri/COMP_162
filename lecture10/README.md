@@ -2,6 +2,8 @@
 
 ## Vignette 1 
 
+![](https://github.com/juliaolivieri/COMP_162/blob/7f245a8eb4587db5c4e43a9707ba4692989cc715/lecture10/plots/vignette1.png)
+
 New techniques:
 * Pipe a data frame into `ggplot` using `%>%`
 * Add a new column with `mutate()` and pipe the result into a plot
@@ -56,6 +58,10 @@ ggsave("weather_on_numriders.png")
 ```
 
 ## Vignette 2
+
+![](https://github.com/juliaolivieri/COMP_162/blob/7f245a8eb4587db5c4e43a9707ba4692989cc715/lecture10/plots/vignette2.png)
+
+
 New techniques:
 * Use `dplyr` to filter a data frame and pipe into `ggplot()`
 
@@ -112,6 +118,10 @@ ggsave("frac_casual_by_day.png")
 ```
 
 ## Vignette 3
+
+![](https://github.com/juliaolivieri/COMP_162/blob/7f245a8eb4587db5c4e43a9707ba4692989cc715/lecture10/plots/vignette3.png)
+
+
 New techniques:
 * Create a grouped bar plot by setting `fill` equal to a variable and `position` equal to `dodge`.
 
@@ -149,6 +159,10 @@ ggsave("weather_by_season.png")
 ```
 
 ## Vignette 4
+
+![](https://github.com/juliaolivieri/COMP_162/blob/7f245a8eb4587db5c4e43a9707ba4692989cc715/lecture10/plots/vignette4.png)
+
+
 New techniques:
 * Learn how to filter by multiple values at once using the "or" operator `|`.
 * Learn `geom_freqpoly()` for creating a "frequency polygon" plot (whereas a histogram shows frequency with bars, this shows frequency with lines)
@@ -220,6 +234,9 @@ ggsave("temp_by_season.png")
 ```
 
 ## Vignette 5
+
+![](https://github.com/juliaolivieri/COMP_162/blob/7f245a8eb4587db5c4e43a9707ba4692989cc715/lecture10/plots/vignette5.png)
+
 New techniques:
 * Learn how to create box plots with `geom_boxplot()`
 * Learn how to add "jitter" to points with `geom_jitter()`
@@ -268,6 +285,9 @@ ggsave("humidty_weather.png")
 ```
 
 ## Vignette 6
+
+![](https://github.com/juliaolivieri/COMP_162/blob/7f245a8eb4587db5c4e43a9707ba4692989cc715/lecture10/plots/vignette6.png)
+
 New techniques:
 * Use `geom_line()` to connect points 
 * Use `group` to add multiple lines to a `geom_line()` plot
@@ -326,6 +346,9 @@ ggsave("riders_by_date.png")
 ```
 
 ## Vignette 7
+
+![](https://github.com/juliaolivieri/COMP_162/blob/7f245a8eb4587db5c4e43a9707ba4692989cc715/lecture10/plots/vignette7.png)
+
 New techniques:
 * Use `group_by()` and `summarize()` to pipe data into `ggplot()`
 * Create a bar plot based on two variables by setting `stat = "identity"`
