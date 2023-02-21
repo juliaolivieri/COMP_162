@@ -36,3 +36,20 @@ Questions
 7. (Challenge) Find the pair of variables with the lowest correlation and a p value of < 0.05.
 8. (Challenge) Try filtering by sex or sport and check how the pairwise correlations change. Do the variables have higher or lower correlations after filtering?
 
+## Regression
+
+Commands from lecture:
+```
+# perform a linear regression with temperature_F as the independent variable and count as the dependent variable
+bike_regression <- lm(count ~ temperature_F, data = bike_sharing)
+
+# summarize the regression output
+summary(bike_regression)
+```
+
+Questions
+1. Of height and weight, which do you presume is the independent variable?
+2. Perform a linear regression on height and weight. What is the slope of the regression line? What is the p value?
+3. How do these values change when you reverse the order of the variables?
+4. (Challenge) Try performing linear regressions for the pairs of variables you found correlations for in the previous section.
+5. (Challenge) Plot two quantitative variables against each other. If you use `geom_smooth(method=lm)`, the linear regression line will be plotted. Try this out.
