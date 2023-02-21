@@ -1,5 +1,7 @@
 # Lecture 11
 
+## Correlation
+
 Commands from lecture:
 ```
 # calculate the correlation between the count and temperature_F columns of bike_sharing
@@ -24,7 +26,7 @@ pairs(select(bike_sharing, temperature_F, humidity, windspeed, count))
 | `sex` | either `f` or `m` |
 | `sport` | Takes on the following values: `B_Ball`, `Field`, `Gym`, `Netball`, `Row`, `Swim`, `T_400m`, `T_Sprnt`, `Tennis`, `W_Polo`|
 
-Correlation questions
+Questions
 1. Load the tidyverse package.
 2. Read the following csv into a data frame called `ais` in R: https://drive.google.com/file/d/1WY7MHz3TnBvMPYJXq8UecPrhgAt8krAJ/view?usp=sharing
 3. Find the pair-wise correlation for all quantitative variables using `cor()` (you will need to use `select()` to remove `sex` and `sport`).
