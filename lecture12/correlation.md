@@ -12,15 +12,6 @@ C. The causality between two variables.
 
 D. The variability of one variable.
 
-### Which of the following is a possible value for a correlation coefficient?
-
-A. -1.5
-
-B. 1.01
-
-C. 2
-
-D. 0.5
 
 ### Which of the following correlation coefficients represents the strongest relationship between two variables?
 
