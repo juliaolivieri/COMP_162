@@ -7,7 +7,7 @@
 2. In R Markdown write down any observations you have.
 3. Develop hypotheses you want to test using the data. Write them in your R Markdown file.
 * Come up with at least 1 hypothesis that involves comparing two quantitative variables.
-* Come up with at least 1 hypothesis that involves comparing a quantitative variable and a qualitative variable.
-4. Perform hypothesis test to test your hypotheses.
+* Come up with at least 1 hypothesis that involves comparing a quantitative variable and a binary variable (note: to do this, you'll have to choose two `Region`s to focus on, since none of our variables are binary).
+4. Perform hypothesis tests for these hypotheses.
 * Remember, we've learned how to run linear models and t tests in R
 5. Write down your conclusions in R Markdown.
