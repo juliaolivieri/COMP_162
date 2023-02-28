@@ -4,4 +4,8 @@
 
 In RStudio, choose File --> R Markdown
 
-![](rmarkdown1)
+<img src="rmarkdown1.png" width=400>
+
+Choose a title and click OK:
+
+
