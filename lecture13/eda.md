@@ -1,5 +1,7 @@
 # Exploratory Data Analysis with R Markdown
 
+**Note: The happiness score is a function of the other variables, so we can focus on relationships between the other variables**
+
 ------
 | Variable | Description |
 --- | ---
