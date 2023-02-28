@@ -98,3 +98,130 @@ ggplot(countries, aes(GDPperCapita, reorder(Region, GDPperCapita),color=Region))
   geom_boxplot()
 ```
 
+## Statistical analysis
+
+### Correlations
+
+Let's start by performing correlations on our quantitative variables.
+
+```{r}
+countries %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor()
+```
+
+It looks like there are positive correlations between almost all of our variables - the only pair with a negative correlation is `Generosity` and `GDPperCapita`. Let's see if that's true with the Spearman correlation as well.
+
+```{r}
+countries %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor(method="spearman")
+```
+When we perform the Spearman correlation, even that negative correlation disappeared (maybe it was driven by an outlier?)
+
+It was interesting to see the `GDPperCapita` broken down by region. I'm interested in whether there are still strong correlations between variables when we subset to just Western Europe.
+
+```{r}
+countries %>%
+  filter(Region == "Western Europe") %>%
+  select(-Country, -Region, -StandardError) %>%
+  pairs()
+```
+```{r}
+countries %>%
+  filter(Region == "Western Europe") %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor()
+```
+It looks like there are actually a few negative correlations here. Do they hold up with a Spearman correlation?
+
+```{r}
+countries %>%
+  filter(Region == "Western Europe") %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor(method = "spearman")
+```
+There are still a lot of negative correlations here. I'm particularly interested in the relationship between `Freedom` and `LifeExpectancy` in Western Europe. Is there really a negative correlation?
+
+### Hypotheses
+
+Some hypotheses I want to test about my data are:
+
+1. Whether there's a relationship between `Freedom` and `LifeExpectancy` 
+1. Whether there's a relationship between `Freedom`  and `LifeExpectancy`  in Western Europe.
+1. Whether there's a difference in mean `Generosity` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+1. Whether there's a difference in mean `Family` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+
+### Linear regressions
+
+Let's perform a linear regression to test our first hypothesis.
+
+```{r}
+summary(lm(LifeExpectancy ~ Freedom, data = countries))
+```
+```{r}
+ggplot(countries, aes(Freedom, LifeExpectancy)) +
+  geom_point(aes(color=Region)) + 
+  geom_smooth(method=lm)
+```
+
+Now let's test the relationship between these two variables after subsetting our data to just Western Europe.
+
+```{r}
+europe <- filter(countries, Region == "Western Europe")
+
+summary(lm(LifeExpectancy ~ Freedom, data = europe))
+```
+```{r}
+ggplot(europe, aes(Freedom, LifeExpectancy)) +
+  geom_point(aes(color=Region)) + 
+  geom_smooth(method=lm)
+```
+### Perform t-tests
+
+Let's test whether there's a difference in mean `Generosity` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+
+```{r}
+subset <- filter(countries, Region == "Latin America and Caribbean" | Region == "Middle East and Northern Africa")
+t.test(Generosity ~ Region, data = subset)
+```
+```{r}
+ggplot(subset,aes(Region, Generosity)) +
+  geom_boxplot() +
+  geom_jitter()
+```
+
+Now let's test whether there's a difference in mean `Family` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+
+```{r}
+t.test(Family ~ Region, data = subset)
+```
+
+```{r}
+ggplot(subset,aes(Region, Family)) +
+  geom_boxplot() +
+  geom_jitter()
+```
+
+### T test based on binning quantitative variables
+
+We want to find high trust and low trust countries, and test for a difference in Freedom.
+
+```{r}
+summary(countries$Trust)
+```
+
+```{r}
+countries <- countries %>%
+  mutate(low_trust = Trust < 0.1)
+```
+
+
+```{r}
+t.test(Freedom ~ low_trust, data = countries)
+```
+```{r}
+ggplot(countries,aes(low_trust, Freedom)) +
+  geom_boxplot() +
+  geom_jitter()
+```
