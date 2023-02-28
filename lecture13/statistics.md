@@ -11,3 +11,4 @@
 4. Perform hypothesis tests for these hypotheses.
 * Remember, we've learned how to run linear models and t tests in R
 5. Write down your conclusions in R Markdown.
+6. Create a plot to emphasize each of your conclusions. 
