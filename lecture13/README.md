@@ -1,4 +1,4 @@
-# Lecture 13 instructions
+# Lecture 13 Intro to R Markdown
 
 ## Creating an R Markdown file
 
@@ -44,6 +44,6 @@ Try writing a line of code to execute here, for example add a few numbers togeth
 
 Choose the "Knit" button on the top bar to create the finished file. You can choose what kind of file output you want each time you knit your file.
 
-
+<img src="rmarkdown4.png" width=200>
 
 
