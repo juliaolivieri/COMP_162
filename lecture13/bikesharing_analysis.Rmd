@@ -1,0 +1,200 @@
+---
+title: "Analysis of Bike Sharing Data"
+author: "Julia Olivieri"
+date: "2023-02-28"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data set
+
+In this notebook we will be analyzing the bike sharing data set available [here](https://archive.ics.uci.edu/ml/machine-learning-databases/00275/). This data set includes observations from each day of 2011 and 2012 from Capital Bikeshare in Washington, D.C. The available variables are:
+
+
+ Variable | Description 
+---|---
+`season` | Either "winter", "spring", "summer", or "fall"
+`month` | Month of the year 
+`year` | Year (either 2011 or 2012)
+`date` | Date
+`date_noyear` | Date with the year set to 2000 for all entries (so dates can be compared across years)
+`holiday` | TRUE if the day is a holiday, FALSE otherwise
+`weekday` | Day of the week
+`workingday` | TRUE if this is Monday - Friday, FALSE if it's Saturday-Sunday
+`weather` |Either "clear," "cloudy," or "rainy" 
+`temperature_F` | Temperature in degrees Fahrenheit
+`casual` | Number of casual (non-registered) riders on the given day
+`registered` | Number of registered riders on the given day
+`count` | Number of total riders on the given day
+`humidity` | Humidity (between 0 and 100)
+`windspeed` | Wind speed in miles per hour
+
+## Exploratory data analysis
+
+Let's start by reading in the data.
+
+```{r}
+library(tidyverse)
+
+bike_sharing <- read_csv("~/Desktop/COMP_162/datasets/bikesharing.csv")
+head(bike_sharing)
+```
+### Descriptive statistics
+
+Looking at the summary of the data set shows us more information about the data available to us. For example, the temperature ranges from 36 to 95 degrees Fahrenheit, and there's a wide range in the number of bike riders per day (22 to 8714).
+```{r}
+summary(bike_sharing)
+```
+
+We have access to a `weather` variable. Let's check what values it takes on, and how many observations there are with each value:
+
+```{r}
+bike_sharing %>%
+  group_by(weather) %>%
+  summarize(count = n())
+```
+
+Looks like there are very few rainy days in our dataset.
+
+Let's check whether the weather seems to affect the number of riders:
+
+```{r}
+bike_sharing %>%
+  group_by(weather) %>%
+  summarize(avg_riders = mean(count))
+```
+It looks like when it rains there are fewer riders on average. Let's see if the number of riders also changes with the season.
+
+```{r}
+bike_sharing %>%
+  group_by(season) %>%
+  summarize(avg_riders = mean(count))
+```
+We see that there are fewer riders in winter compared with the other months, which makes sense because of the relationship with the temperature.
+
+### Data visualizations
+
+Let's visualize some of these relationships. We can start by creating pairwise scatterplots for a bunch of our quantitative variables:
+
+```{r}
+bike_sharing %>%
+  select(temperature_F, humidity, windspeed, count) %>%
+  pairs()
+```
+Let's look at the relationship between `temperature_F` and `count` more closely:
+
+```{r}
+ggplot(bike_sharing, aes(temperature_F, count,color=weather)) +
+  geom_point()
+```
+This gives us a better sense of how `weather` and `temperature_F` influence `count`.
+
+Finally, let's check the number of riders by date:
+
+```{r}
+ggplot(bike_sharing, aes(date_noyear, count,group=year,color=year)) +
+  geom_line()
+```
+It looks like there were more riders in 2012 than in 2011. We might want to stick with an analysis of just one year because of this difference.
+
+## Statistical analysis
+
+### Correlations
+
+Now we can formulate our hypotheses more clearly, and perform some statistical analyses. We'll focus on only 2012. Let's start by finding the correlations between the quantitative variables we're interested in.
+
+```{r}
+bikeshare_2012 <- filter(bike_sharing, year == 2012)
+bikeshare_2012 %>%
+  select(temperature_F, humidity, windspeed, count) %>%
+  cor()
+```
+Looking at our "pairs" plot above, there do seem to be some outliers. Let's try a Spearman correlation as well:
+
+```{r}
+bikeshare_2012 %>%
+  select(temperature_F, humidity, windspeed, count) %>%
+  cor(method = "spearman")
+```
+### Developing hypotheses
+
+Now that we've done a bunch of exploratory analysis, we have enough of a sense of our data to make some research hypotheses.
+
+1. There is a relationship between the temperature and the number of riders.
+1. There is a relationship between humidity and the number of riders.
+1. There is a difference between the number of riders on a clear and cloudy day.
+1. There is a difference between the number of riders on a Tuesday and a Thursday.
+
+And here are the corresponding null hypotheses:
+
+1. The slope of the regression line for `temperature_F` vs `count` is equal to zero.
+1. The slope of the regression line for `humidity` vs `count` is equal to zero.
+1. There is no difference between the population mean of `count` on a clear day vs `count` on a cloudy day.
+1. There is no difference between the population mean of `count` on a Tuesday vs `count` on a Thursday.
+
+### Testing hypotheses
+
+Now that we've formulated these hypotheses, let's test them. We can start with the linear models.
+
+```{r}
+print(summary(lm(count ~ temperature_F, data = bikeshare_2012)))
+```
+```{r}
+ggplot(bikeshare_2012, aes(temperature_F, count)) +
+  geom_point() +
+  geom_smooth(method = lm)
+```
+
+We can reject the null hypothesis in this case. Now let's test our second hypothesis:
+
+```{r}
+print(summary(lm(count ~ humidity, data = bikeshare_2012)))
+```
+
+```{r}
+ggplot(bikeshare_2012, aes(humidity, count)) +
+  geom_point() +
+  geom_smooth(method = lm)
+```
+
+Now, let's perform our t-tests.
+
+```{r}
+norain_bikeshare_2012 <- filter(bikeshare_2012, weather != "rain")
+t.test(count ~ weather, data = norain_bikeshare_2012)
+```
+```{r}
+ggplot(norain_bikeshare_2012, aes(weather,count)) +
+  geom_boxplot(aes(color=weather)) +
+  geom_jitter(color="darkgray")
+```
+
+We are able to reject the null hypothesis in this case.
+
+Now let's test our next hypothesis:
+
+```{r}
+tuethur_bikeshare_2012 <- filter(bikeshare_2012, weekday == "Tuesday" | weekday == "Thursday")
+t.test(count ~ weekday, data = tuethur_bikeshare_2012)
+```
+
+```{r}
+ggplot(tuethur_bikeshare_2012, aes(weekday,count)) +
+  geom_boxplot(aes(color=weekday)) +
+  geom_jitter(color="darkgray")
+```
+
+In this case we fail to reject the null hypothesis.
+
+## Conclusion
+
+Based on our analysis of the bike sharing data from 2012, we found evidence of a positive relationship between `temperature_F` and `count`. Specifically, for every increase in degree, we see on average 98.223 more riders.
+
+We also found evidence for a difference in the number of riders between clear and cloudy days. We are 95% confidence that the true difference is between 637 and  1386 riders more clear vs cloudy days.
+
+We found no evidence that there is a relationship between humidity and number of riders, or a difference in number of riders on Tuesdays vs Thursdays.
