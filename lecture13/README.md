@@ -8,4 +8,6 @@ In RStudio, choose File --> R Markdown
 
 Choose a title and click OK:
 
+<img src="rmarkdown2.png" width=400>
+
 
