@@ -42,8 +42,18 @@ Try writing a line of code to execute here, for example add a few numbers togeth
 
 ## Creating the finished file
 
-Choose the "Knit" button on the top bar to create the finished file. You can choose what kind of file output you want each time you knit your file.
+Choose the "Knit" button on the top bar to create the finished file. You can choose what kind of file output you want each time you knit your file (I recommend html).
 
 <img src="rmarkdown4.png" width=200>
 
+## Challenge
+
+If you have extra time, try out more sophisticated markdown formatting: https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf. These are all techniques that can help make your final reports more polished.
+
+1. Write a sentence with one word bolded and one word in italics.
+2. Add a hyperlink to a webpage. 
+3. Add a table.
+4. Add an inline equation.
+5. Create a bulleted list.
+6. Create a numbered list.
 

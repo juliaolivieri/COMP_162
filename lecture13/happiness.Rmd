@@ -1,0 +1,227 @@
+---
+title: "lecture 13"
+author: "Julia Olivieri"
+date: "2023-02-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Data set
+
+In this report we'll be analyzing data from the 2015 World Happiness Report.
+
+We'll start by reading in the data:
+
+```{r}
+library(tidyverse)
+
+countries <- read_csv("~/Desktop/COMP_162/datasets/happiness_2015.csv")
+```
+## Exploratory data analysis
+
+### Descriptive statistics
+
+Let's start by finding some summaries of our variables.
+
+```{r}
+summary(countries)
+```
+Based on this output, we can see that our quantitative variables (other than `HappinessScore`) seem to fall between 0 and 2 (so for example `LifeExpectancy`  isn't in years).
+
+We have two categorical variables. Let's see how many observations of each type we have for these.
+
+```{r}
+countries %>%
+  group_by(Country) %>%
+  summarize(count = n()) %>%
+  arrange(desc(count))
+```
+Looks like there's only one entry for each country, just as we'd suspect. Let's do the same for region:
+
+```{r}
+countries %>%
+  group_by(Region) %>%
+  summarize(count = n()) %>%
+  arrange(desc(count))
+```
+
+We can see that the five regions with the greatest number of countries contain the vast majority of countries. This could be useful if we want to subset to only specific regions later in our analysis.
+
+Let's break down some of these scores more. I'm interested in finding how the means of our various quantitative variables vary by region.
+
+```{r}
+countries %>%
+  group_by(Region) %>%
+  summarize(avg_score = mean(Generosity)) %>%
+  arrange(desc(avg_score))
+```
+
+```{r}
+countries %>%
+  group_by(Region) %>%
+  summarize(avg_score = mean(GDPperCapita)) %>%
+  arrange(desc(avg_score))
+```
+
+```{r}
+countries %>%
+  group_by(Region) %>%
+  summarize(avg_score = mean(Family)) %>%
+  arrange(desc(avg_score))
+```
+
+### Exploratory visualizations
+
+Now let's look at some visualizations of our data. Let's look at the relationships between our quantitative variables:
+
+```{r}
+countries %>%
+  select(-Country, -Region, -StandardError) %>%
+  pairs()
+```
+Looks like there are some interesting relationships here. One I'm interested in is the relationship between `GDPperCapita` and `LifeExpectancy`. Let's see how that varies with region.
+
+```{r}
+ggplot(countries, aes(GDPperCapita, LifeExpectancy,color=Region)) +
+  geom_point()
+```
+
+That's interesting, it looks like the `LifeExpectancy`  in Sub-Saharan Africa is lower than almost all other regions, even when the `GDPperCapita` is higher. It also looks like the Western European countries all have very high values for both.
+
+It's a bit hard to tell some of these colors apart. Let's look at `GDPperCapita`  separated by region:
+
+```{r}
+ggplot(countries, aes(GDPperCapita, reorder(Region, GDPperCapita),color=Region)) +
+  geom_boxplot()
+```
+
+## Statistical analysis
+
+### Correlations
+
+Let's start by performing correlations on our quantitative variables.
+
+```{r}
+countries %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor()
+```
+
+It looks like there are positive correlations between almost all of our variables - the only pair with a negative correlation is `Generosity` and `GDPperCapita`. Let's see if that's true with the Spearman correlation as well.
+
+```{r}
+countries %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor(method="spearman")
+```
+When we perform the Spearman correlation, even that negative correlation disappeared (maybe it was driven by an outlier?)
+
+It was interesting to see the `GDPperCapita` broken down by region. I'm interested in whether there are still strong correlations between variables when we subset to just Western Europe.
+
+```{r}
+countries %>%
+  filter(Region == "Western Europe") %>%
+  select(-Country, -Region, -StandardError) %>%
+  pairs()
+```
+```{r}
+countries %>%
+  filter(Region == "Western Europe") %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor()
+```
+It looks like there are actually a few negative correlations here. Do they hold up with a Spearman correlation?
+
+```{r}
+countries %>%
+  filter(Region == "Western Europe") %>%
+  select(-Country, -Region, -StandardError) %>%
+  cor(method = "spearman")
+```
+There are still a lot of negative correlations here. I'm particularly interested in the relationship between `Freedom` and `LifeExpectancy` in Western Europe. Is there really a negative correlation?
+
+### Hypotheses
+
+Some hypotheses I want to test about my data are:
+
+1. Whether there's a relationship between `Freedom` and `LifeExpectancy` 
+1. Whether there's a relationship between `Freedom`  and `LifeExpectancy`  in Western Europe.
+1. Whether there's a difference in mean `Generosity` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+1. Whether there's a difference in mean `Family` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+
+### Linear regressions
+
+Let's perform a linear regression to test our first hypothesis.
+
+```{r}
+summary(lm(LifeExpectancy ~ Freedom, data = countries))
+```
+```{r}
+ggplot(countries, aes(Freedom, LifeExpectancy)) +
+  geom_point(aes(color=Region)) + 
+  geom_smooth(method=lm)
+```
+
+Now let's test the relationship between these two variables after subsetting our data to just Western Europe.
+
+```{r}
+europe <- filter(countries, Region == "Western Europe")
+
+summary(lm(LifeExpectancy ~ Freedom, data = europe))
+```
+```{r}
+ggplot(europe, aes(Freedom, LifeExpectancy)) +
+  geom_point(aes(color=Region)) + 
+  geom_smooth(method=lm)
+```
+### Perform t-tests
+
+Let's test whether there's a difference in mean `Generosity` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+
+```{r}
+subset <- filter(countries, Region == "Latin America and Caribbean" | Region == "Middle East and Northern Africa")
+t.test(Generosity ~ Region, data = subset)
+```
+```{r}
+ggplot(subset,aes(Region, Generosity)) +
+  geom_boxplot() +
+  geom_jitter()
+```
+
+Now let's test whether there's a difference in mean `Family` between "Latin America and Caribbean" and "Middle East and Northern Africa"
+
+```{r}
+t.test(Family ~ Region, data = subset)
+```
+
+```{r}
+ggplot(subset,aes(Region, Family)) +
+  geom_boxplot() +
+  geom_jitter()
+```
+
+### T test based on binning quantitative variables
+
+We want to find high trust and low trust countries, and test for a difference in Freedom.
+
+```{r}
+summary(countries$Trust)
+```
+
+```{r}
+countries <- countries %>%
+  mutate(low_trust = Trust < 0.1)
+```
+
+
+```{r}
+t.test(Freedom ~ low_trust, data = countries)
+```
+```{r}
+ggplot(countries,aes(low_trust, Freedom)) +
+  geom_boxplot() +
+  geom_jitter()
+```

@@ -1,5 +1,7 @@
 # Statistical analysis of data
 
+**Note: The happiness score is a function of the other variables, so we can focus on relationships between the other variables**
+
 1. Analyze the correlations in the data.
 * Perform pairwise correlations between a subset of the quantitative variables using Pearson's coefficient.
 * Perform pairwise correlations between a subset of the quantitative variables using Spearman's coefficient.
