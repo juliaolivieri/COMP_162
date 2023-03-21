@@ -11,16 +11,17 @@ If you can't find the "Anaconda-Navigator" Application on your computer, you sho
 ## Launching JupyterLab
 
 1. Open Anaconda-Navigator.
-1. Click "Launch" in the JupyterLab box.
-1. Choose Python 3 (ipykernel) notebook.
+1. Click "Launch" in the JupyterLab box. It will launch JupyterLab in your default browser.
+1. Under "Notebook," double click on Choose Python 3 (ipykernel) to launch a new notebook.
 1. Rename the notebook by right-clicking on the notebook name and choosing "Rename Notebook...".
+1. Click on the "file" icon on the left side of the screen to see whether this file is located. You can drag it around to change its location if you would like.
 
 ## Using a Jupyter Notebook
 
 Each section of a notebook is called a "cell" or a "block."
-1. Create a new code block: To add a new code block, press "+" under the title of your notebook. Make sure "Code" is chosen in the drop-down menu of the same toolbar.
 1. Create a new Markdown block: To add a new code block, press "+" under the title of your notebook. Choose "Markdown" in the drop-down menu of the same toolbar.
 1. Write something in your Markdown block and format it. To format a text block, press shift-enter, or press the "run" button (the triangle) in the notebook's toolbar. You can use the same Markdown formatting rules we used for R Markdown (e.g. # for headers).
+1. Create a new code block: To add a new code block, press "+" under the title of your notebook. Make sure "Code" is chosen in the drop-down menu of the same toolbar.
 1. Running a code block is the same process as formatting a text block. Write `print("hello world!")` in your code block, and run it by pressing the "run" button (the triangle) in the notebook's toolbar, or pressing shift-enter. You should see the output "hello world!" below the cell.
 1. Add a new code block, write the code `x = 0` in it, and `print(x)`. Run this code block.
 1. Variables are shared across a whole notebook. Whenever the notebook is restarted, all variable values are lost. Create a code block that adds one to x and prints x: 
