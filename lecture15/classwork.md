@@ -90,7 +90,9 @@ math.sqrt(x)
 5. Define four different variables, each of a different type (four types with examples are available in the table above). Check that each variable is the correct type with `type()`, e.g. `type(x)`. 
 6. Import the `math` package. 
 7. Take the square root of one of your previously-defined variables using the `sqrt()` function from the math package. Remember, to use a function from a package you have to specify that package, e.g. `math.sqrt(x)`.
-8. The math package also has a function `ceil()` that rounds values to the next-highest integer. Try using it on a "float" value you defined above.
-
+8. (Challenge) The math package also has a function `ceil()` that rounds values to the next-highest integer. Try using it on a "float" value you defined above.
+9. (Challenge) Define the following variables (choose their values yourself): `X1`, `X2`, `t`, `s1`, `s2`, `n1`, `n2`. Write an expression in terms of these variables to calculate the following:
+   
+   $$ (X_1 - X_2) + t\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} $$
 
 
