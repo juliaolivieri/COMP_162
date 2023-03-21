@@ -17,6 +17,10 @@ If you can't find the "Anaconda-Navigator" Application on your computer, you sho
 
 ## Practice with notebook
 
+1. To add a new block, press "+" under the title of your notebook. Create a new block.
+1. To change the 
+
+
 1. Create a markdown cell, write something in it, and "execute" it by pressing the "run" button or SHIFT+ENTER.
 1. Create a code cell and define a variable  using at least three of the operations in the following table:
 
