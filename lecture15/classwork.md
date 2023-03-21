@@ -74,7 +74,7 @@ math.sqrt(x)
 | * | Multiplication |
 | / | Division |
 | ** | Exponent |
-| %% | Modulo |
+| % | Modulo |
 | // | Floor division |
 
 | Data type | Example |
