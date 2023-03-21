@@ -6,7 +6,7 @@ If you can't find the "Anaconda-Navigator" Application on your computer, you sho
 
 1. Click the "Download" button here: https://www.anaconda.com/. Note, if this download doesn't work, you can click "Get Additional Installers" under the download button to find more versions to try.
 2. Install Anaconda from the downloaded file. You can choose the default options during the install. Make a note of where Anaconda is getting installed.
-3. Once installation is complete, you should be able to find the "Anaconda-Navigator" application on your computer.
+3. Once installation is complete, you should be able to find the "Anaconda-Navigator" application on your computer. If you have trouble with this, try following the instructions here: https://docs.anaconda.com/navigator/getting-started/.
 
 ## Launching JupyterLab
 
