@@ -53,9 +53,9 @@ t = 2 + 3
 u = s - t
 v = 10 / 3
 w = 10 // 3
-x = 10 %% 3
+x = 10 % 3
 y = 2**3
-z = (u * v) // (w**3 %% 2)
+z = (u * v) // (w**3 % 2)
 
 # Find the type of a variable
 type(x)
