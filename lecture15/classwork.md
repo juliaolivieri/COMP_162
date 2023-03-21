@@ -4,9 +4,9 @@
 
 If you can't find the "Anaconda-Navigator" Application on your computer, you should install it. 
 
-1. Click "Download" to download the version for your system: https://www.anaconda.com/products/distribution
-1. Install Anaconda from the downloaded file
-1. Check to make sure you can find the "Anaconda-Navigator" application on your computer.
+1. Click the "Download" button here: https://www.anaconda.com/. Note, if this download doesn't work, you can click "Get Additional Installers" under the download button to find more versions to try.
+2. Install Anaconda from the downloaded file. You can choose the default options during the install. Make a note of where Anaconda is getting installed.
+3. Once installation is complete, you should be able to find the "Anaconda-Navigator" application on your computer.
 
 ## Launching JupyterLab
 
@@ -15,7 +15,7 @@ If you can't find the "Anaconda-Navigator" Application on your computer, you sho
 1. Choose Python 3 (ipykernel) notebook.
 1. Rename the notebook by right-clicking on the notebook name and choosing "Rename Notebook...".
 
-## Practice with notebook
+## Using a Jupyter Notebook
 
 Each section of a notebook is called a "cell" or a "block."
 1. Create a new code block: To add a new code block, press "+" under the title of your notebook. Make sure "Code" is chosen in the drop-down menu of the same toolbar.
