@@ -14,7 +14,7 @@ If you can't find the "Anaconda-Navigator" Application on your computer, you sho
 1. Click "Launch" in the JupyterLab box. It will launch JupyterLab in your default browser.
 1. Under "Notebook," double click on Choose Python 3 (ipykernel) to launch a new notebook.
 1. Rename the notebook by right-clicking on the notebook name and choosing "Rename Notebook...".
-1. Click on the "file" icon on the left side of the screen to see whether this file is located. You can drag it around to change its location if you would like.
+1. Click on the "file" icon on the left side of the screen to see whether this file is located. You can drag it around to change its location if you would like. You will submit this file in your classwork assignment for today's class.
 
 ## Using a Jupyter Notebook
 
