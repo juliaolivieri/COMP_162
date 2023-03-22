@@ -14,3 +14,5 @@ R syntax | Python syntax | Description
  `summary(test_df)` | `test_df.describe(include = "all")` | Generate summary statistics for data frame columns
  `test_df$col1` | `test_df["col1"]` | Access column named `"col1"` from data frame `test_df`
  `test_df[,c("name", "age", "height")]` | `test_df[["name", "age", "height"]]` | Subset data frame `test_df` to just columns  `"name"`, `"age"`, and `"height"` 
+ `filter(test_df, school == "UOP")`| `test_df[test_df["school"] == "UOP"]` | Subset data frame `test_df` to only rows for which `"school"` is equal to `"UOP"`
+ `filter(test_df, age > 18)` | `test_df[test_df["age"] > 18]` | Subset data frame `test_df` to only rows for which `"age"` is greater than 18
