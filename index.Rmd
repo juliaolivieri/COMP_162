@@ -1,0 +1,71 @@
+---
+title: "Data Analysis in R"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this R Markdown notebook we'll be performing some R data analysis that you will be translating into Python. At each stage, check to make sure that your output is the same.
+
+We'll start by reading in the "taxis" data set, which includes information about the pickup and drop off time and location, distance, and amount paid (among other things). We'll move on to practice indexing, and other data frame operations.
+
+```{r}
+library(tidyverse)
+taxis <- read_csv("taxis.csv")
+```
+
+```{r}
+head(taxis)
+```
+
+```{r}
+tail(taxis)
+```
+
+```{r}
+taxis[100, 1]
+```
+```{r}
+taxis[c(5, 10, 150, 30), c(1, 3, 7, 5)]
+```
+
+```{r}
+taxis[300:310, c("pickup_zone", "dropoff_zone")]
+```
+
+```{r}
+head(taxis$payment)
+```
+
+```{r}
+str(taxis)
+```
+```{r}
+summary(taxis)
+```
+```{r}
+small_taxis <- taxis[,c("fare", "distance", "dropoff_zone")]
+head(small_taxis)
+```
+```{r}
+small_taxis %>% 
+  group_by(dropoff_zone) %>% 
+  summarize(count = n()) %>% 
+  arrange(desc(count))
+```
+
+
+```{r}
+small_taxis <- filter(small_taxis, dropoff_zone == "Midtown East")
+head(small_taxis)
+```
+```{r}
+small_taxis <- filter(small_taxis, distance > 1)
+head(small_taxis)
+```
+```{r}
+write_csv(small_taxis, "small_taxis.csv")
+```
+
