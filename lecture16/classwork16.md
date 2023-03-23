@@ -41,6 +41,23 @@ animals.loc[3, "species"] # results in "dog"
    ```
 1. What are two ways to index into the "10" entry?
 
+## Classwork 4
+
+Code from class:
+```
+animals.iloc[0:2, 1:4]
+animals.loc[[3, 6],["size", "name", "age"]]
+```
+
+1. Load mining.csv into a DataFrame called mining using the provided command.
+1. Index into the "pearl" entry using .iloc
+1. Index into the "diamond" entry using .loc
+1. Use .iloc to subset to a DataFrame only containing gems, and no "rock"
+1. Use .loc to subset to a DataFrame only containing gems, and no "rock"
+1. (Challenge)
+
+## Classwork 5
+
 R syntax | Python syntax | Description
 -- | -- | --
 `read_csv("test.csv")`| `pd.read_csv("test.csv")`| read csv called `test.csv`
@@ -60,12 +77,9 @@ R syntax | Python syntax | Description
   `test_df %>% group_by(color) %>% summarize(count = n()) %>% arrange(desc(count))`| `test_df.value_counts("color")` | Find the count of each value for categorical variable `"color"` in data frame `test_df` in descending order
 
 
-`["I", "am", "having", "fun", "with", "Python"]`
-
 1. Load the csv using the command `rock = pd.read_csv("mining.csv",index_col = 0)`. 
 2. Use `iloc` to index only into the gems.
 3. Use `loc` to index only into the gems.
 
 R Markdown file to translate: https://juliaolivieri.github.io/
 
-To load animal data frame: `animals = pd.DataFrame({"species": ["dog", "cat", "penguin"], "size": [40, 10, 80]}, index = [3, 6, 7])`
