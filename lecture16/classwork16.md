@@ -49,12 +49,14 @@ animals.iloc[0:2, 1:4]
 animals.loc[[3, 6],["size", "name", "age"]]
 ```
 
-1. Load mining.csv into a DataFrame called mining using the provided command.
-1. Index into the "pearl" entry using .iloc
-1. Index into the "diamond" entry using .loc
-1. Use .iloc to subset to a DataFrame only containing gems, and no "rock"
-1. Use .loc to subset to a DataFrame only containing gems, and no "rock"
-1. (Challenge)
+1. Download the `mining.csv` file: https://drive.google.com/file/d/1Z6_ejcVUrmB39BO3GJ2bmwD8lrrX2TvW/view?usp=sharing
+2. Load `mining.csv` into a DataFrame called `mine` using this command:
+   `mine = pd.read_csv("mining.csv",index_col = 0)`
+3. Index into the "pearl" entry using `.iloc[]`
+4. Index into the "diamond" entry using `.loc[]`
+5. Use `.iloc[]` to subset to a DataFrame only containing gems, and no "rock"
+6. Use `.loc[]` to subset to a DataFrame only containing gems, and no "rock"
+7. (Challenge) Add a new column with only "rock" values. Assign an entry to be "topaz" and an entry to be "amethyst" in such a way that you can still index to include all gems and no "rock". Use both methods to index into only the gems in the augmented DataFrame.
 
 ## Classwork 5
 
