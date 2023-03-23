@@ -11,6 +11,21 @@ Do the following in a new Jupyter Notebook in JupyterLab:
 1. The Python Standard Library includes a module random containing a function `randint()`. Given two integers, `randint()` will contain an integer in that range. For example, `randint(1,6)` will return an integer between 1 and 6 (inclusive). Use this function to find a random number between 0 and 36.
 1. (Challenge) What happens when you set a random seed with the `seed()` function before running `randint()`? Why might this function be useful? https://docs.python.org/3/library/random.html 
 
+## Classwork 2
+
+Code from class:
+```
+example_list = [5, -2.3, 10, 11, 3]
+fruits = ["apple", "banana", "cherry"]
+
+example_list[0] # result is 5
+fruits[1] # result is "banana"
+example_list[2:4] # result is [10, 11]
+```
+
+1. Slice the following array so that you are left with the last three elements: `["I", "am", "having", "fun", "with", "Python"]`
+
+
 R syntax | Python syntax | Description
 -- | -- | --
 `read_csv("test.csv")`| `pd.read_csv("test.csv")`| read csv called `test.csv`
