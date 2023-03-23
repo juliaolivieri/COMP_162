@@ -25,3 +25,4 @@ R syntax | Python syntax | Description
 
 R Markdown file to translate: https://juliaolivieri.github.io/
 
+To load animal data frame: `animals = pd.DataFrame({"species": ["dog", "cat", "penguin"], "size": [40, 10, 80]}, index = [3, 6, 7])`
