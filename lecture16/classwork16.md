@@ -56,7 +56,7 @@ animals.loc[[3, 6],["size", "name", "age"]]
 4. Index into the "diamond" entry using `.loc[]`
 5. Use `.iloc[]` to subset to a DataFrame only containing gems, and no "rock"
 6. Use `.loc[]` to subset to a DataFrame only containing gems, and no "rock"
-7. (Challenge) Add a new column with only "rock" values. Assign an entry to be "topaz" and an entry to be "amethyst" in such a way that you can still index to include all gems and no "rock". Use both methods to index into only the gems in the augmented DataFrame.
+7. (Challenge) Assign an entry to be "topaz" and an entry to be "amethyst" in such a way that you can still index to include all gems and no "rock". Use both methods to index into only the gems in the augmented DataFrame.
 
 ## Classwork 5
 
