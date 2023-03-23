@@ -25,6 +25,21 @@ example_list[2:4] # result is [10, 11]
 
 1. Slice the following array so that you are left with the last three elements: `["I", "am", "having", "fun", "with", "Python"]`
 
+## Classwork 3
+
+Code from class:
+```
+animals.iloc[0,0] # results in "dog"
+animals.loc[3, "species"] # results in "dog"
+```
+
+1. Copy and run the following code to load the `animals` DataFrame:
+   ```
+   import pandas as pd
+   
+   animals = pd.DataFrame({"species": ["dog", "cat", "penguin"], "size": [40, 10, 80], "name": ["Typo", "Ralph", "Pinky"], "age": [5, 18, 12]}, index = [3, 6, 7])
+   ```
+1. What are two ways to index into the "10" entry?
 
 R syntax | Python syntax | Description
 -- | -- | --
