@@ -63,7 +63,8 @@ animals.loc[[3, 6],["size", "name", "age"]]
 All of the commands we have learned today have analogs in R. The table below provides a reference for each command in both R and Python.
 
 1. To practice the commands we've learned today, as well as see their relationship with the R commands that we've already learned, "translate" each line of the following R Markdown file to Python in your Jupyter Notebook: https://juliaolivieri.github.io/. The `taxis.csv` file is available here: https://drive.google.com/file/d/1yzcou-mgYXhanO_gP69TZyEC_2S5sm0f/view?usp=share_link. You can check the output of your notebook against the output in the R Markdown file.
-2. 
+2. Which variables are binary? Which command is most useful for identifying binary variables?
+3. For any of these commands, do you prefer the syntax or output from R rather than Python, or vice versa?
 
 R syntax | Python syntax | Description
 -- | -- | --
@@ -82,7 +83,4 @@ R syntax | Python syntax | Description
  `filter(test_df, school == "UOP")`| `test_df[test_df["school"] == "UOP"]` | Subset data frame `test_df` to only rows for which `"school"` is equal to `"UOP"`
  `filter(test_df, age > 18)` | `test_df[test_df["age"] > 18]` | Subset data frame `test_df` to only rows for which `"age"` is greater than 18
   `test_df %>% group_by(color) %>% summarize(count = n()) %>% arrange(desc(count))`| `test_df.value_counts("color")` | Find the count of each value for categorical variable `"color"` in data frame `test_df` in descending order
-
-
-R Markdown file to translate: 
 
