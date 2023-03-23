@@ -16,3 +16,4 @@ R syntax | Python syntax | Description
  `test_df[,c("name", "age", "height")]` | `test_df[["name", "age", "height"]]` | Subset data frame `test_df` to just columns  `"name"`, `"age"`, and `"height"` 
  `filter(test_df, school == "UOP")`| `test_df[test_df["school"] == "UOP"]` | Subset data frame `test_df` to only rows for which `"school"` is equal to `"UOP"`
  `filter(test_df, age > 18)` | `test_df[test_df["age"] > 18]` | Subset data frame `test_df` to only rows for which `"age"` is greater than 18
+  `test_df %>% group_by(color) %>% summarize(count = n()) %>% arrange(desc(count))`| `test_df.value_counts("color")` | Find the count of each value for categorical variable `"color"` in data frame `test_df` in descending order
