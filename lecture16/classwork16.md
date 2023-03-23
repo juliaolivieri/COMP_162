@@ -19,6 +19,8 @@ R syntax | Python syntax | Description
   `test_df %>% group_by(color) %>% summarize(count = n()) %>% arrange(desc(count))`| `test_df.value_counts("color")` | Find the count of each value for categorical variable `"color"` in data frame `test_df` in descending order
 
 
+`["I", "am", "having", "fun", "with", "Python"]`
+
 1. Load the csv using the command `rock = pd.read_csv("mining.csv",index_col = 0)`. 
 2. Use `iloc` to index only into the gems.
 3. Use `loc` to index only into the gems.
