@@ -60,6 +60,11 @@ animals.loc[[3, 6],["size", "name", "age"]]
 
 ## Classwork 5
 
+All of the commands we have learned today have analogs in R. The table below provides a reference for each command in both R and Python.
+
+1. To practice the commands we've learned today, as well as see their relationship with the R commands that we've already learned, "translate" each line of the following R Markdown file to Python in your Jupyter Notebook: https://juliaolivieri.github.io/. The `taxis.csv` file is available here: https://drive.google.com/file/d/1yzcou-mgYXhanO_gP69TZyEC_2S5sm0f/view?usp=share_link. You can check the output of your notebook against the output in the R Markdown file.
+2. 
+
 R syntax | Python syntax | Description
 -- | -- | --
 `read_csv("test.csv")`| `pd.read_csv("test.csv")`| read csv called `test.csv`
@@ -79,9 +84,5 @@ R syntax | Python syntax | Description
   `test_df %>% group_by(color) %>% summarize(count = n()) %>% arrange(desc(count))`| `test_df.value_counts("color")` | Find the count of each value for categorical variable `"color"` in data frame `test_df` in descending order
 
 
-1. Load the csv using the command `rock = pd.read_csv("mining.csv",index_col = 0)`. 
-2. Use `iloc` to index only into the gems.
-3. Use `loc` to index only into the gems.
-
-R Markdown file to translate: https://juliaolivieri.github.io/
+R Markdown file to translate: 
 
