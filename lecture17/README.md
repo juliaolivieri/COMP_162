@@ -49,4 +49,7 @@ sns.catplot(data=tips, kind="bar", x="day", y="total_bill", hue="smoker")
 plt.show()
 ```
 
-1. 
+1. Make the plots you brainstormed in Classwork 1.
+1. Try each "kind" value for the `catplot()` and `displot()` functions on the data. Which is most informative for the variable(s) you're looking at?
+1. Create as many images as you can that show insights from the dataset.
+1. Submit your favorite image that you created to this link: https://forms.gle/SFBcSFnZg1i97er57
