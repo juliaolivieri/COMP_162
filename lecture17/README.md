@@ -13,7 +13,7 @@ The commands in the GitHub from last class might be useful: https://github.com/j
 1. Filter the data based on one categorical variable value. Compute summary statistics before and after filtering. Do any of the summary statistics change?
 1. Brainstorm at least three plots that would help you understand this data. Which variable(s) are involved? Are they quantitative or categorical?
 
-## Classwork 2
+## Classwork 5
 
 Example code from class:
 
@@ -26,6 +26,9 @@ plt.show()
 
 # Create a histogram of the "total_bill" variable colored by "smoker" and faceted by "time"
 sns.displot(data=tips, x="total_bill",hue = "smoker", col="time", kind = "hist")
+plt.show()
+
+sns.displot(data=tips, x = "tip", hue="time", kind="kde")
 plt.show()
 
 # Create a scatterplot of "total_bill" vs "tip"
@@ -43,8 +46,18 @@ sns.relplot(
 )
 plt.show()
 
+sns.relplot(
+    data=penguins,
+    x="bill_length_mm", y="bill_depth_mm", col="sex",
+    hue="species", style="island", size="body_mass_g"
+)
+plt.show()
+
 # Create a barplot of "day" by "total_bill" colored by "smoker"
 sns.catplot(data=tips, kind="bar", x="day", y="total_bill", hue="smoker")
+plt.show()
+
+sns.catplot(data = penguins, x = "species", y = "body_mass_g", kind = "box", hue="sex")
 plt.show()
 ```
 
@@ -59,7 +72,7 @@ Documentation for functions:
 1. Make the plots you brainstormed in Classwork 1.
 1. Work on improving one of your plots so that it enhances understanding of the dataset. Save it by including `plt.savefig("my_img.png")` on the line before `plt.show()`. Submit it: https://forms.gle/SFBcSFnZg1i97er57
 
-## Classwork 3
+## Classwork 6
 
 Example code from class:
 ```
