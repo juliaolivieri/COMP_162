@@ -14,3 +14,39 @@ The commands in the GitHub from last class might be useful: https://github.com/j
 1. Brainstorm at least three plots that would help you understand this data. Which variable(s) are involved? Are they quantitative or categorical?
 1. (Challenge)
 
+## Classwork 2
+
+Example code from class:
+
+```
+import seaborn as sns
+
+# Create a histogram of the "total_bill" variable
+sns.displot(data=tips, x="total_bill")
+plt.show()
+
+# Create a histogram of the "total_bill" variable colored by "smoker" and faceted by "time"
+sns.displot(data=tips, x="total_bill",hue = "smoker", col="time", kind = "hist")
+plt.show()
+
+# Create a scatterplot of "total_bill" vs "tip"
+sns.relplot(
+    data=tips,
+    x="total_bill", y="tip"
+)
+plt.show()
+
+# Create a scatterplot of "total_bill" vs "tip" colored by "smoker", faceted by "time", with marker style determined by "smoker" and size of the marker determined by "size"
+sns.relplot(
+    data=tips,
+    x="total_bill", y="tip", col="time",
+    hue="smoker", style="smoker", size="size"
+)
+plt.show()
+
+# Create a barplot of "day" by "total_bill" colored by "smoker"
+sns.catplot(data=tips, kind="bar", x="day", y="total_bill", hue="smoker")
+plt.show()
+```
+
+1. 
