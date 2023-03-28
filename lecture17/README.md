@@ -6,13 +6,12 @@ The commands in the GitHub from last class might be useful: https://github.com/j
 
 1. Open a new JupyterLab session. This notebook is what you'll turn in for your classwork today.
 1. Import pandas.
-1. Download the dataset and load it in using pandas: 
+1. Download the college majors dataset and load it using pandas: https://drive.google.com/file/d/1WK9sQdr_S7RHDUIdEBPZ88dPeOUvTY7E/view?usp=sharing
 1. Find the number of rows and columns of the DataFrame.
 1. What is the data type of each column?
 1. Use the `value_counts()`  function to find the count of each uniqu value in every categorical column.
 1. Filter the data based on one categorical variable value. Compute summary statistics before and after filtering. Do any of the summary statistics change?
 1. Brainstorm at least three plots that would help you understand this data. Which variable(s) are involved? Are they quantitative or categorical?
-1. (Challenge)
 
 ## Classwork 2
 
@@ -49,10 +48,16 @@ sns.catplot(data=tips, kind="bar", x="day", y="total_bill", hue="smoker")
 plt.show()
 ```
 
+Documentation for functions:
+* `displot`: https://seaborn.pydata.org/generated/seaborn.displot.html
+*  `relplot`: https://seaborn.pydata.org/generated/seaborn.relplot.html
+* `catplot`: https://seaborn.pydata.org/generated/seaborn.catplot.html
+
+
+1. Make a plot of a quantitative variable using `displot()`. Set `hue` equal to a categorical variable. Try with `kind = "hist"` and `kind = "kde"`. Which provides a better representation of your data?
+1. Make a plot of a categorical variable vs a quantitative variable using `catplot()`. Set `hue` equal to a categorical variable. Try with `kind` equal to each of the following: `"strip", "swarm", "box", "violin", "boxen", "point", "bar"`. Which provides the best representation of your data?
 1. Make the plots you brainstormed in Classwork 1.
-1. Try each "kind" value for the `catplot()` and `displot()` functions on the data. Which is most informative for the variable(s) you're looking at?
-1. Create as many images as you can that show insights from the dataset.
-1. Submit your favorite image that you created to this link: https://forms.gle/SFBcSFnZg1i97er57
+1. Work on improving one of your plots so that it enhances understanding of the dataset. Save it by including `plt.savefig("my_img.png")` on the line before `plt.show()`. Submit it: https://forms.gle/SFBcSFnZg1i97er57
 
 ## Classwork 3
 
