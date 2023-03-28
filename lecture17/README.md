@@ -19,6 +19,7 @@ Example code from class:
 
 ```
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 # Create a histogram of the "total_bill" variable
 sns.displot(data=tips, x="total_bill")
