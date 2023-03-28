@@ -53,3 +53,26 @@ plt.show()
 1. Try each "kind" value for the `catplot()` and `displot()` functions on the data. Which is most informative for the variable(s) you're looking at?
 1. Create as many images as you can that show insights from the dataset.
 1. Submit your favorite image that you created to this link: https://forms.gle/SFBcSFnZg1i97er57
+
+## Classwork 3
+
+Example code from class:
+```
+penguins = sns.load_dataset("penguins")
+
+# creating pairwise scatterplots of all quantitative variables
+sns.pairplot(data=penguins)
+plt.show()
+
+# creating pairwise scatterplots of all quantitative variables colored by species
+sns.pairplot(data=penguins, hue="species")
+plt.show()
+
+# adding a regression line to a scatterplot
+sns.lmplot(data=tips, x="total_bill", y="tip", col="time", hue="smoker")
+plt.show()
+
+# Create a scatterplot along with distribution plots for the variables
+sns.jointplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
+plt.show()
+```
