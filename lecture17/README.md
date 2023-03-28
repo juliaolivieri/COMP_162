@@ -88,7 +88,7 @@ Documentation for functions:
 * `jointplot`: https://seaborn.pydata.org/generated/seaborn.jointplot.html
 
 
-1. Create a pairplot for the dataset. Which pairs of variables seem most interesting based on this plot? If you color the pair plot by a categorical variable does it reveal any additional information?
-1. Create a plot of with a regression line between two quantitative variables. Does it look like the two variables have a linear relationship?
-1. Create a jointplot between these two variables. Color by a categorical variable. What extra information does the jointplot provide?
-1. (Challenge) Explore different jointplot "kinds." Which kind is most appropriate for your data?
+1. Create a `pairplot` for the dataset. Which pairs of variables seem most interesting based on this plot? If you color the pair plot by a categorical variable does it reveal any additional information?
+1. Create a plot of with a regression line between two quantitative variables you just identified. Does it look like the two variables have a linear relationship?
+1. Create a `jointplot` between these two variables. Color by a categorical variable. What extra information does the jointplot provide?
+1. (Challenge) Explore different jointplot "kinds" : `"scatter", "kde", "hist", "reg"`. Which kind is most appropriate for your data?
