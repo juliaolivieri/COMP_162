@@ -45,8 +45,8 @@ books.sort_values(["Rating", "PublishYear"], ascending = False)
 ## Filtering code from class
 
 ```
-books = books[(books[“PublishYear”] > 1800) & (books[“PublishYear”] < 2024)]
-books = books[(books[“Language”] == “eng”) | (books[“Language”] == “en-US”) | (books[“Language”] == “en-GB”)]
+books = books[(books["PublishYear"] > 1800) & (books["PublishYear"] < 2024)]
+books = books[(books["Language"] == "eng") | (books["Language"] == "en-US") | (books["Language"] == "en-GB")]
 ```
 
 ## Creating a new column code from class
