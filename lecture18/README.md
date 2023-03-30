@@ -37,9 +37,9 @@ pd.set_option('display.max_colwidth', None)
 ## Sorting code from class
 
 ```
-books.sort_values(“Rating”)
-books.sort_values([“Rating”, “PublishYear”])
-books.sort_values([“Rating”, “PublishYear”], ascending = False)
+books.sort_values("Rating")
+books.sort_values(["Rating", "PublishYear"])
+books.sort_values(["Rating", "PublishYear"], ascending = False)
 ```
 
 ## Filtering code from class
