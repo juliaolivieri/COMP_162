@@ -22,3 +22,46 @@ Variable | Description
 `Language` | The language the book is written in
 `Authors` | The author(s) of the book
 `Rating` | The average rating given to this book (out of 5)
+
+## Importing code from class
+
+```
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as sns
+
+# Stops columns from being cut off when displayed
+pd.set_option('display.max_colwidth', None)
+```
+
+## Sorting code from class
+
+```
+books.sort_values(“Rating”)
+books.sort_values([“Rating”, “PublishYear”])
+books.sort_values([“Rating”, “PublishYear”], ascending = False)
+```
+
+## Filtering code from class
+
+```
+books = books[(books[“PublishYear”] > 1800) & (books[“PublishYear”] < 2024)]
+books = books[(books[“Language”] == “eng”) | (books[“Language”] == “en-US”) | (books[“Language”] == “en-GB”)]
+```
+
+## Creating a new column code from class
+
+```
+books[“RatingsPlusReviews”] = books[“RatingDistTotal”] + books[“CountsOfReviews”]	
+books[“fracRated1”] = books[“RatingDist1”]/books[“RatingDistTotal”]
+books[“Rated5MinusRated1”] = books[“RatingDist5”] - books[“RatingDist1”]
+```
+
+## Making a categorical column out of a quantitative column code from class
+
+```
+books[“Length”] = “tiny”
+books.loc[books[“pagesNumber”] > 20, “Length”] = “short”
+books.loc[books[“pagesNumber”] > 150, “Length”] = “medium”
+books.loc[books[“pagesNumber”] > 350, “Length”] = “long”
+```
