@@ -61,7 +61,7 @@ books["Rated5MinusRated1"] = books["RatingDist5"] - books["RatingDist1"]
 
 ```
 books["Length"] = "tiny"
-books.loc[books[“pagesNumber”] > 20, “Length”] = “short”
-books.loc[books[“pagesNumber”] > 150, “Length”] = “medium”
-books.loc[books[“pagesNumber”] > 350, “Length”] = “long”
+books.loc[books["pagesNumber"] > 20, "Length"] = "short"
+books.loc[books["pagesNumber"] > 150, "Length"] = "medium"
+books.loc[books["pagesNumber"] > 350, "Length"] = "long"
 ```
