@@ -28,7 +28,7 @@ Variable | Description
 ```
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as sns
+import matplotlib.pyplot as plt
 
 # Stops columns from being cut off when displayed
 pd.set_option('display.max_colwidth', None)
