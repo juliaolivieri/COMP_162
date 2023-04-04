@@ -29,7 +29,7 @@ sns.heatmap(aq.corr(),annot=True)
 plt.show()
 ```
 
-1. Load the air quality dataset into your notebook.
+1. Load the air quality dataset into your notebook. Data available here: https://drive.google.com/file/d/1zxa8ekinJdsucWvtrVmpxazYM8oSo0DA/view?usp=sharing
 1. Familiarize yourself with the data by performing some exploratory data analysis.
 1. Calculate the Spearman and Pearson correlation matrices.
 1. Plot the Spearman and Pearson correlation matrices.
