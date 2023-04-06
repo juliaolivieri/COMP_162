@@ -81,7 +81,7 @@ pd.DataFrame({"column" : X_test.columns, "coefficient" : reg.coef_[0]}).sort_val
    1. The model has a high training accuracy and a high testing accuracy
    1. The model has a low training accuracy and a low testing accuracy
 
-## Classwork 2
+## Classwork 4
 
 Code from class:
 ```
