@@ -33,7 +33,7 @@ Variable | Description
 `MEDV` | Median value of owner-occupied homes in $1000's
 `expensive` | Is equal to “no” if the cost is <= $21,000, otherwise “yes”
 
-## Classwork 1
+## Classwork 2
 
 Code from class:
 ```
