@@ -62,6 +62,25 @@ pd.DataFrame({"column" : X_test.columns, "coefficient" : reg.coef_[0]}).sort_val
 1. Which variables have the largest effect on the prediction?
 1. (Challenge) Try subsetting to only the one or two variables with the largest absolute coefficients and training the model again. How does the score change?
 
+## Classwork 3
+
+1. What does overfitting refer to in the context of machine learning models?
+   1. A model that has learned the noise in the training data and performs poorly on unseen data
+   1. A model that has not learned enough from the training data and performs poorly on unseen data
+1. What does underfitting refer to in the context of machine learning models?
+   1. A model that has learned the noise in the training data and performs poorly on unseen data
+   1. A model that has not learned enough from the training data and performs poorly on unseen data
+1. How can you detect overfitting in a machine learning model?
+   1. The model has a high training accuracy and a low testing accuracy
+   1. The model has a low training accuracy and a high testing accuracy
+   1. The model has a high training accuracy and a high testing accuracy
+   1. The model has a low training accuracy and a low testing accuracy
+1. How can you detect underfitting in a machine learning model?
+   1. The model has a high training accuracy and a low testing accuracy
+   1. The model has a low training accuracy and a high testing accuracy
+   1. The model has a high training accuracy and a high testing accuracy
+   1. The model has a low training accuracy and a low testing accuracy
+
 ## Classwork 2
 
 Code from class:
