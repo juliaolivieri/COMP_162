@@ -3,17 +3,17 @@
 ## Classwork 1
 
 1. If a machine learning task involves predicting the percentage of a student's score in an exam, which type of task is it?
-   a. Regression
-   b. Classification
+   1. Regression
+   1. Classification
 1. If a machine learning task involves predicting whether a customer will make a purchase or not, which type of task is it?
-   a. Regression
-   b. Classification
+   1. Regression
+   1. Classification
 1. If a machine learning task involves predicting a person's age based on their social media usage, given a dataset with ages and corresponding social media usage data, which type of learning is it?
-   a. Supervised learning
-   b. Unsupervised learning
+   1. Supervised learning
+   1. Unsupervised learning
 1. If a machine learning task involves grouping similar news articles together without prior knowledge of their categories, which type of learning is it?
-   a. Supervised learning
-   b. Unsupervised learning
+   1. Supervised learning
+   1. Unsupervised learning
 
 
 Variable | Description
