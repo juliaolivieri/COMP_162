@@ -157,7 +157,7 @@ dbscan.labels_
    sns.relplot(data = blob, x = 0, y = 1, hue = "dbscan")
    plt.show()
 
-   dbscan = cluster.DBSCAN(eps = 0.3, min_samples = 5).dbscan.fit(circles[[0, 1]])
+   dbscan = cluster.DBSCAN(eps = 0.3, min_samples = 5).fit(circles[[0, 1]])
    circles["dbscan"] = dbscan.labels_
    sns.relplot(data = circles, x = 0, y = 1, hue = "dbscan")
    plt.show()
