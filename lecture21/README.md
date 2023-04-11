@@ -37,3 +37,48 @@ The GitHub from last class is available here: https://github.com/juliaolivieri/C
 
 ## Classwork 2
 
+Code from class:
+```
+from sklearn import cluster
+kmeans = cluster.KMeans(n_clusters=3).fit(X)
+
+kmeans.labels_
+
+kmeans.predict(X)
+```
+
+
+1. Make the toy datasets by copying the following code and running it:
+
+   ```
+   X, y = make_blobs(random_state=1)
+   blob = pd.DataFrame(X)
+   blob["y"] = y
+
+   X, y = datasets.make_moons(n_samples=200, noise=0.05, random_state=0)
+   moons = pd.DataFrame(X)
+   moons["y"] = y
+
+   X, y = datasets.make_circles(n_samples=200, noise = 0.05, random_state=1, factor = .3)
+   circles = pd.DataFrame(X)
+   circles["y"] = y
+   ```
+1. Run the following code to perform k-means clustering on each of these toy datasets, and plot the result:
+   ```
+   kmeans = cluster.KMeans(n_clusters=3).fit(blob[[0, 1]])
+   blob["kmeans_3"] = kmeans.labels_
+   sns.relplot(data = blob, x = 0, y = 1, hue = "kmeans_3")
+   plt.show()
+
+   kmeans = cluster.KMeans(n_clusters=2).fit(circles[[0, 1]])
+   circles["kmeans_2"] = kmeans.labels_
+   sns.relplot(data = circles, x = 0, y = 1, hue = "kmeans_2")
+   plt.show()
+
+   kmeans = cluster.KMeans(n_clusters=2).fit(moons[[0, 1]])
+   moons["kmeans_2"] = kmeans.labels_
+   sns.relplot(data = moons, x = 0, y = 1, hue = "kmeans_2")
+   plt.show()
+   ```
+1. Change the `n_clusters` variable for each of these toy datasets. How does this affect the result?
+1. Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters? 
