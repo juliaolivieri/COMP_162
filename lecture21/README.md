@@ -50,7 +50,7 @@ kmeans.predict(X)
 
 1. Make the toy datasets by copying the following code and running it:
    ```
-   X, y = make_blobs(random_state=1)
+   X, y = datasets.make_blobs(random_state=1)
    blob = pd.DataFrame(X)
    blob["y"] = y
 
@@ -93,7 +93,7 @@ agg.labels_
 
 1. Make the toy datasets by copying the following code and running it:
    ```
-   X, y = make_blobs(random_state=1)
+   X, y = datasets.make_blobs(random_state=1)
    blob = pd.DataFrame(X)
    blob["y"] = y
 
@@ -138,7 +138,7 @@ dbscan.labels_
 
 1. Make the toy datasets by copying the following code and running it:
    ```
-   X, y = make_blobs(random_state=1)
+   X, y = datasets.make_blobs(random_state=1)
    blob = pd.DataFrame(X)
    blob["y"] = y
 
@@ -152,17 +152,17 @@ dbscan.labels_
    ```
 1. Run the following code to perform k-means clustering on each of these toy datasets, and plot the result:
    ```
-   dbscan = DBSCAN(eps = 1, min_samples = 5).fit(blob[[0, 1]])
+   dbscan = cluster.DBSCAN(eps = 1, min_samples = 5).fit(blob[[0, 1]])
    blob["dbscan"] = dbscan.labels_
    sns.relplot(data = blob, x = 0, y = 1, hue = "dbscan")
    plt.show()
 
-   dbscan = DBSCAN(eps = 0.3, min_samples = 5).dbscan.fit(circles[[0, 1]])
+   dbscan = cluster.DBSCAN(eps = 0.3, min_samples = 5).dbscan.fit(circles[[0, 1]])
    circles["dbscan"] = dbscan.labels_
    sns.relplot(data = circles, x = 0, y = 1, hue = "dbscan")
    plt.show()
 
-   dbscan = DBSCAN(eps = 0.3, min_samples = 5).fit(moons[[0, 1]])
+   dbscan = cluster.DBSCAN(eps = 0.3, min_samples = 5).fit(moons[[0, 1]])
    moons["dbscan"] = dbscan.labels_
    sns.relplot(data = moons, x = 0, y = 1, hue = "dbscan")
    plt.show()
