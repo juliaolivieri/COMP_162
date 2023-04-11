@@ -125,3 +125,48 @@ agg.labels_
 1. Change the `n_clusters` variable for each of these toy datasets. How does this affect the result?
 1. Change the `linkage` variable to `complete`, `single`, and `average`. How does this affect the result?
 1. (Challenge) Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters? 
+
+## Classwork 4
+
+Code from class:
+```
+dbscan = DBSCAN(eps = 1).fit(X)
+
+dbscan.labels_
+```
+
+
+1. Make the toy datasets by copying the following code and running it:
+   ```
+   X, y = make_blobs(random_state=1)
+   blob = pd.DataFrame(X)
+   blob["y"] = y
+
+   X, y = datasets.make_moons(n_samples=200, noise=0.05, random_state=0)
+   moons = pd.DataFrame(X)
+   moons["y"] = y
+
+   X, y = datasets.make_circles(n_samples=200, noise = 0.05, random_state=1, factor = .3)
+   circles = pd.DataFrame(X)
+   circles["y"] = y
+   ```
+1. Run the following code to perform k-means clustering on each of these toy datasets, and plot the result:
+   ```
+   dbscan = DBSCAN(eps = 1, min_samples = 5).fit(blob[[0, 1]])
+   blob["dbscan"] = dbscan.labels_
+   sns.relplot(data = blob, x = 0, y = 1, hue = "dbscan")
+   plt.show()
+
+   dbscan = DBSCAN(eps = 0.3, min_samples = 5).dbscan.fit(circles[[0, 1]])
+   circles["dbscan"] = dbscan.labels_
+   sns.relplot(data = circles, x = 0, y = 1, hue = "dbscan")
+   plt.show()
+
+   dbscan = DBSCAN(eps = 0.3, min_samples = 5).fit(moons[[0, 1]])
+   moons["dbscan"] = dbscan.labels_
+   sns.relplot(data = moons, x = 0, y = 1, hue = "dbscan")
+   plt.show()
+   ```
+1. Change the `eps` variable for each of these toy datasets. How does this affect the result?
+1. Change the `min_samples` variable for each of these toy datasets. How does this affect the result?
+1. (Challenge) Vary the parameters used to make the toy datasets (change `n_samples`, `noise`, etc). How do these parameters affect the clusters? 
