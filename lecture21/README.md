@@ -10,6 +10,7 @@ reg = linear_model.LogisticRegression().fit(X_train, y_train)
 
 reg.score()
 
+y_pred = reg.predict(X_test)
 metrics.confusion_matrix(y_test, y_pred)
 ```
 
