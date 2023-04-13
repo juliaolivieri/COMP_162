@@ -1,3 +1,18 @@
+1. In machine learning, what is overfitting?
+   * (a) A model that performs poorly on both the training and test datasets
+   * (a) A model that has learned the training data too well, resulting in poor generalization to new data
+   * (a) A model that performs well on the test dataset but poorly on the training dataset
+   * (a) A model that is too simple to capture the underlying structure of the data
+1. In the context of machine learning, what is the purpose of the test dataset?
+   * (a) To provide examples for the model to learn from during training
+   * (a) To assess the performance of the model on new, unseen data
+   * (a) To help with variable selection and preprocessing
+   * (a) To store metadata about the model and its parameters
+1. What is the purpose of splitting a dataset into training and testing sets in machine learning?
+   * (a) To reduce the computational cost of training the model
+   * (a) To ensure that the model can generalize well to new, unseen data
+   * (a) To create a smaller dataset that is easier to manage
+   * (a) To increase the diversity of the data points in each set
 1. What is the primary goal of linear regression?
    * (a) To classify data into discrete categories
    * (b) To predict a quantitative output variable
@@ -15,7 +30,7 @@
    * (d) To maximize the likelihood of the data given a set of parameters
 1. Which of the following is an example of a supervised learning task?
    * (a) Clustering customers based on their purchasing behavior
-   * (b) Predicting house prices based on features like size and location
+   * (b) Predicting house prices based on variables like size and location
    * (c) Discovering hidden topics in a collection of documents
    * (d) Finding the optimal path for a robot to navigate in an environment
 1. What is a major advantage of supervised learning over unsupervised learning?
